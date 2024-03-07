@@ -1,0 +1,1 @@
+{"Train Loss": 0.11191285401582718, "_timestamp": 1695574125.448083, "_runtime": 1437.259032011032, "_step": 50, "AUC Before Max": 0.5588510891623134, "AUC After Max": 0, "_wandb": {"runtime": 1443}}

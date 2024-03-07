@@ -1,0 +1,25 @@
+2023-09-28 17:09:47,916 INFO    MainThread:11544 [wandb_setup.py:_flush():76] Current SDK version is 0.15.11
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_setup.py:_flush():76] Configure stats pid to 11544
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_setup.py:_flush():76] Loading settings from C:\Users\User\.config\wandb\settings
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_setup.py:_flush():76] Loading settings from C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\settings
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'fedavg.py', 'program_abspath': 'C:\\Users\\User\\PycharmProjects\\FL_AD\\src\\server\\fedavg.py', 'program': 'C:\\Users\\User\\PycharmProjects\\FL_AD\\src\\server\\fedavg.py'}
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230928_170947-wd2d9pck\logs\debug.log
+2023-09-28 17:09:47,931 INFO    MainThread:11544 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230928_170947-wd2d9pck\logs\debug-internal.log
+2023-09-28 17:09:47,947 INFO    MainThread:11544 [wandb_init.py:init():568] calling init triggers
+2023-09-28 17:09:47,947 INFO    MainThread:11544 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': 'c2fpl', 'dataset': 'ucf', 'seed': 42, 'join_ratio': 0.1, 'global_epoch': 50, 'local_epoch': 5, 'finetune_epoch': 0, 'test_gap': 50, 'eval_test': 1, 'eval_train': 0, 'local_lr': 0.01, 'momentum': 0.0, 'weight_decay': 0.0, 'verbose_gap': 100000, 'batch_size': 256, 'visible': 0, 'global_testset': 0, 'straggler_ratio': 0, 'straggler_min_local_epoch': 1, 'external_model_params_file': '', 'use_cuda': 1, 'save_log': 1, 'save_model': 0, 'save_fig': 0, 'save_metrics': 0, 'partition': 'partition_25_V2.pkl', 'dataset_args': {'dataset': 'ucf', 'client_num': 25, 'seed': 42, 'split': 'sample'}}
+2023-09-28 17:09:47,947 INFO    MainThread:11544 [wandb_init.py:init():618] starting backend
+2023-09-28 17:09:47,947 INFO    MainThread:11544 [wandb_init.py:init():622] setting up manager
+2023-09-28 17:09:47,978 INFO    MainThread:11544 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-09-28 17:09:48,119 INFO    MainThread:11544 [wandb_init.py:init():628] backend started and connected
+2023-09-28 17:09:48,384 INFO    MainThread:11544 [wandb_init.py:init():720] updated telemetry
+2023-09-28 17:09:48,384 INFO    MainThread:11544 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-09-28 17:09:49,679 INFO    MainThread:11544 [wandb_run.py:_on_init():2220] communicating current version
+2023-09-28 17:09:50,304 INFO    MainThread:11544 [wandb_run.py:_on_init():2229] got version response 
+2023-09-28 17:09:50,304 INFO    MainThread:11544 [wandb_init.py:init():804] starting run threads in backend
+2023-09-28 17:10:05,222 INFO    MainThread:11544 [wandb_run.py:_console_start():2199] atexit reg
+2023-09-28 17:10:05,222 INFO    MainThread:11544 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-09-28 17:10:05,269 INFO    MainThread:11544 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-09-28 17:10:05,269 INFO    MainThread:11544 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-09-28 17:10:05,269 INFO    MainThread:11544 [wandb_init.py:init():845] run started, returning control to user process

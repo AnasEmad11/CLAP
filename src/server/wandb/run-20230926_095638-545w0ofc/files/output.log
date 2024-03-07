@@ -1,0 +1,17 @@
+
+Backend QtAgg is interactive backend. Turning interactive mode on.
+Testing
+Testing
+Traceback (most recent call last):
+  File "C:\Program Files\JetBrains\PyCharm Community Edition 2022.3\plugins\python-ce\helpers\pydev\pydevd.py", line 1496, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "C:\Program Files\JetBrains\PyCharm Community Edition 2022.3\plugins\python-ce\helpers\pydev\_pydev_imps\_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "C:\Users\User\PycharmProjects\FL_AD\src\server\fedavg.py", line 580, in <module>
+    server.run()
+  File "C:\Users\User\PycharmProjects\FL_AD\src\server\fedavg.py", line 516, in run
+    self.train()
+  File "C:\Users\User\PycharmProjects\FL_AD\src\server\fedavg.py", line 236, in train
+    self.test_ucf()
+  File "C:\Users\User\PycharmProjects\FL_AD\src\server\fedavg.py", line 315, in test_ucf
+    AUC_before.append(stats["before"]["AUC"])

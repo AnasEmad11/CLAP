@@ -1,0 +1,8 @@
+
+Testing
+{'AUC': '0.7777 -> 0.0000'}
+Training... ---------------------------------------- 100% 0:39:32
+==================== FedAvg TEST RESULTS: ====================
+{100: {'AUC': '0.7777 -> 0.0000'}}
+Convergence (test_before):
+Convergence (test_after):

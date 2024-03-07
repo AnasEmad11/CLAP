@@ -1,0 +1,885 @@
+2023-09-26 18:14:00,615 INFO    StreamThr :6704 [internal.py:wandb_internal():86] W&B internal server running at pid: 6704, started at: 2023-09-26 18:14:00.612898
+2023-09-26 18:14:00,618 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status
+2023-09-26 18:14:00,621 INFO    WriterThread:6704 [datastore.py:open_for_write():85] open: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\run-a11i8xgt.wandb
+2023-09-26 18:14:00,631 DEBUG   SenderThread:6704 [sender.py:send():380] send: header
+2023-09-26 18:14:00,631 DEBUG   SenderThread:6704 [sender.py:send():380] send: run
+2023-09-26 18:14:01,948 INFO    SenderThread:6704 [dir_watcher.py:__init__():211] watching files in: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files
+2023-09-26 18:14:01,948 INFO    SenderThread:6704 [sender.py:_start_run_threads():1122] run started: a11i8xgt with start time 1695737640.613893
+2023-09-26 18:14:01,985 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: check_version
+2023-09-26 18:14:01,986 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: check_version
+2023-09-26 18:14:02,664 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: run_start
+2023-09-26 18:14:02,703 DEBUG   HandlerThread:6704 [system_info.py:__init__():32] System info init
+2023-09-26 18:14:02,703 DEBUG   HandlerThread:6704 [system_info.py:__init__():47] System info init done
+2023-09-26 18:14:02,703 INFO    HandlerThread:6704 [system_monitor.py:start():181] Starting system monitor
+2023-09-26 18:14:02,705 INFO    SystemMonitor:6704 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-09-26 18:14:02,705 INFO    HandlerThread:6704 [system_monitor.py:probe():201] Collecting system info
+2023-09-26 18:14:02,711 INFO    SystemMonitor:6704 [interfaces.py:start():190] Started cpu monitoring
+2023-09-26 18:14:02,713 INFO    SystemMonitor:6704 [interfaces.py:start():190] Started disk monitoring
+2023-09-26 18:14:02,716 INFO    SystemMonitor:6704 [interfaces.py:start():190] Started gpu monitoring
+2023-09-26 18:14:02,724 INFO    SystemMonitor:6704 [interfaces.py:start():190] Started memory monitoring
+2023-09-26 18:14:02,741 INFO    SystemMonitor:6704 [interfaces.py:start():190] Started network monitoring
+2023-09-26 18:14:02,750 DEBUG   HandlerThread:6704 [system_info.py:probe():196] Probing system
+2023-09-26 18:14:02,751 DEBUG   HandlerThread:6704 [system_info.py:probe():244] Probing system done
+2023-09-26 18:14:02,751 DEBUG   HandlerThread:6704 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.10.13', 'heartbeatAt': '2023-09-26T14:14:02.750110', 'startedAt': '2023-09-26T14:14:00.600950', 'docker': None, 'cuda': None, 'args': ('-d', 'ucf', '-m', 'c2fpl', '--global_testset', '0', '-bs', '128', '--global_epoch', '50', '--test_gap', '50', '--local_epoch', '5', '--partition', 'partition_10_V2.pkl'), 'state': 'running', 'program': 'C:\\Users\\User\\PycharmProjects\\FL_AD\\src\\server\\fedavg.py', 'codePathLocal': 'fedavg.py', 'codePath': 'fedavg.py', 'host': 'DESKTOP-B1GU9KD', 'username': 'User', 'executable': 'C:\\Users\\User\\.conda\\envs\\Federate_learning_project\\python.exe', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2394.0, 'min': 0.0, 'max': 2394.0}, 'cpu_freq_per_core': [{'current': 2394.0, 'min': 0.0, 'max': 2394.0}], 'disk': {'/': {'total': 1862.4036293029785, 'used': 1295.2598304748535}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 127.65470504760742}}
+2023-09-26 18:14:02,751 INFO    HandlerThread:6704 [system_monitor.py:probe():211] Finished collecting system info
+2023-09-26 18:14:02,751 INFO    HandlerThread:6704 [system_monitor.py:probe():214] Publishing system info
+2023-09-26 18:14:02,751 DEBUG   HandlerThread:6704 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-09-26 18:14:02,752 DEBUG   HandlerThread:6704 [system_info.py:_save_pip():68] Saving pip packages done
+2023-09-26 18:14:02,752 DEBUG   HandlerThread:6704 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-09-26 18:14:02,965 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\requirements.txt
+2023-09-26 18:14:02,966 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\conda-environment.yaml
+2023-09-26 18:14:16,076 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\conda-environment.yaml
+2023-09-26 18:14:16,083 DEBUG   HandlerThread:6704 [system_info.py:_save_conda():87] Saving conda packages done
+2023-09-26 18:14:16,085 INFO    HandlerThread:6704 [system_monitor.py:probe():216] Finished publishing system info
+2023-09-26 18:14:16,095 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:16,096 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: keepalive
+2023-09-26 18:14:16,096 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:16,097 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: keepalive
+2023-09-26 18:14:16,097 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:16,098 DEBUG   SenderThread:6704 [sender.py:send():380] send: files
+2023-09-26 18:14:16,098 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-09-26 18:14:16,129 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:14:16,130 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:14:16,135 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:14:16,546 DEBUG   SenderThread:6704 [sender.py:send():380] send: telemetry
+2023-09-26 18:14:17,084 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-metadata.json
+2023-09-26 18:14:18,120 INFO    wandb-upload_0:6704 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmpeh_m52t4wandb\66lbzt1o-wandb-metadata.json
+2023-09-26 18:14:21,587 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:26,630 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:31,129 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:14:31,129 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:14:31,131 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:14:32,501 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:34,229 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\config.yaml
+2023-09-26 18:14:36,053 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:14:36,056 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:14:36,056 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:14:36,059 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:14:36,247 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:14:39,075 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:44,119 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:46,122 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:14:46,138 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:14:46,139 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:14:49,466 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:54,481 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:14:56,121 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:14:56,122 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:14:56,123 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:14:56,127 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:14:56,359 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:15:00,149 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:01,137 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:15:01,153 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:15:01,155 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:15:02,743 DEBUG   SystemMonitor:6704 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-09-26 18:15:02,746 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:15:05,768 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:10,782 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:15,796 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:16,147 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:15:16,162 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:15:16,163 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:15:20,168 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:15:20,170 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:15:20,171 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:15:20,173 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:15:20,522 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:15:21,188 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:26,205 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:31,157 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:15:31,172 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:15:31,173 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:15:31,491 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:32,762 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:15:36,787 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:39,298 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:15:39,299 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:15:39,300 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:15:39,301 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:15:39,734 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:15:42,312 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:46,166 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:15:46,182 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:15:46,184 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:15:47,486 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:52,500 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:57,514 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:15:58,293 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:15:58,294 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:15:58,295 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:15:58,297 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:15:58,916 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:16:01,176 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:16:01,192 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:16:01,193 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:16:02,544 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:02,769 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:16:07,805 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:12,843 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:13,328 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:16:13,329 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:16:13,330 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:16:13,334 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:16:14,082 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:16:16,189 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:16:16,206 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:16:16,207 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:16:18,649 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:23,671 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:28,684 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:28,900 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:16:28,902 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:16:28,902 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:16:28,904 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:16:29,243 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:16:31,201 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:16:31,217 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:16:31,219 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:16:32,777 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:16:33,794 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:38,825 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:43,868 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:45,819 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:16:45,821 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:16:45,822 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:16:45,823 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:16:46,204 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:16:46,221 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:16:46,222 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:16:46,443 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:16:49,590 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:54,605 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:16:59,617 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:01,210 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:17:01,410 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:17:01,412 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:17:01,667 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:17:01,745 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:17:01,746 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:17:01,748 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:17:02,610 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:17:02,786 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:17:04,806 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:09,821 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:14,833 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:16,218 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:17:16,251 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:17:16,252 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:17:20,642 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:25,663 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:27,464 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:17:27,466 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:17:27,466 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:17:27,470 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:17:27,880 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:17:31,228 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:17:31,260 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:17:31,260 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:31,261 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:17:32,788 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:17:36,825 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:41,845 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:46,239 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:17:46,272 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:17:46,273 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:17:47,574 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:51,719 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:17:51,720 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:17:51,721 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:17:51,723 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:17:52,112 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:17:52,732 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:17:57,746 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:01,249 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:18:01,280 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:18:01,281 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:18:02,792 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:18:02,794 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:07,822 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:11,647 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:18:11,649 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:18:11,649 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:18:11,650 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:18:12,312 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:18:13,665 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:16,259 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:18:16,291 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:18:16,292 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:18:19,661 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:24,675 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:29,692 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:31,333 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:18:31,334 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:18:31,335 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:18:31,471 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:18:31,648 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:18:31,648 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:18:31,650 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:18:32,526 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:18:32,798 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:18:34,818 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:39,834 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:44,847 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:46,330 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:18:46,331 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:18:46,346 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:18:47,398 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:18:47,400 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:18:47,401 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:18:47,404 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:18:47,700 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:18:50,420 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:18:55,435 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:00,450 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:01,334 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:19:01,336 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:19:01,359 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:19:02,808 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:19:05,831 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:06,616 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:19:06,618 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:19:06,618 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:19:06,620 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:19:06,898 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:19:11,640 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:16,339 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:19:16,340 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:19:16,371 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:19:17,626 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:22,641 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:25,951 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:19:25,953 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:19:25,953 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:19:25,955 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:19:26,119 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:19:27,973 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:31,352 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:19:31,352 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:19:31,383 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:19:32,815 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:19:33,831 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:38,846 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:43,011 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:19:43,013 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:19:43,014 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:19:43,015 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:19:43,288 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:19:44,031 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:46,360 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:19:46,361 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:19:46,376 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:19:49,651 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:54,669 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:19:59,684 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:01,374 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:20:01,375 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:20:01,391 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:20:02,828 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:20:04,848 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:08,626 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:20:08,628 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:20:08,628 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:20:08,630 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:20:09,555 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:20:10,644 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:15,686 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:16,386 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:20:16,387 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:20:16,403 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:20:20,730 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:25,744 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:28,270 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:20:28,272 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:20:28,273 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:20:28,274 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:20:28,752 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:20:31,283 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:31,396 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:20:31,397 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:20:31,411 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:20:32,845 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:20:36,869 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:41,884 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:45,139 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:20:45,141 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:20:45,141 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:20:45,142 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:20:45,898 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:20:46,407 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:20:46,408 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:20:46,423 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:20:47,758 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:52,775 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:20:57,790 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:01,419 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:21:01,419 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:21:01,435 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:21:02,852 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:21:02,855 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:04,337 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:21:04,339 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:21:04,339 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:21:04,341 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:21:05,097 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:21:08,359 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:13,373 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:16,428 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:21:16,429 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:21:16,444 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:21:18,719 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:21,291 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:21:21,293 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:21:21,294 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:21:21,295 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:21:22,268 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:21:24,303 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:29,344 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:31,423 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:21:31,425 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:21:31,454 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:21:32,856 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:21:34,880 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:39,924 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:44,961 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:45,395 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:21:45,397 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:21:45,397 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:21:45,399 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:21:45,520 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:21:46,428 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:21:46,428 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:21:46,458 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:21:50,788 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:21:55,831 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:00,880 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:01,438 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:22:01,439 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:22:01,470 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:22:02,872 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:22:04,581 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:22:04,583 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:22:04,584 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:22:04,586 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:22:04,685 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:22:06,595 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:11,622 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:16,431 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:22:16,432 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:22:16,479 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:22:16,758 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:21,733 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:22:21,735 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:22:21,735 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:22:21,737 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:22:21,866 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:22:22,742 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:27,751 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:31,437 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:22:31,438 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:22:31,485 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:22:32,785 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:32,883 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:22:37,928 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:42,963 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:46,458 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:22:46,459 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:22:46,488 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:22:47,549 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:22:47,551 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:22:47,552 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:22:47,553 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:22:48,165 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:22:48,555 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:53,594 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:22:58,635 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:01,466 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:23:01,467 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:23:01,497 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:23:02,887 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:23:03,893 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:08,948 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:11,830 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:23:11,832 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:23:11,833 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:23:11,835 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:23:12,363 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:23:14,858 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:16,475 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:23:16,476 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:23:16,506 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:23:20,808 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:25,819 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:30,827 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:31,611 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:23:31,611 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:23:31,613 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:23:31,840 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:23:31,906 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:23:31,907 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:23:31,908 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:23:32,559 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:23:32,894 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:23:35,923 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:40,960 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:45,974 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:46,622 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:23:46,623 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:23:46,624 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:23:47,127 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:23:47,131 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:23:47,132 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:23:47,134 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:23:47,714 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:23:51,164 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:23:56,195 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:01,224 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:01,633 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:24:01,653 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:24:01,654 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:24:02,912 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:24:06,952 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:11,436 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:24:11,438 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:24:11,439 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:24:11,440 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:24:11,915 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:24:12,454 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:16,647 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:24:16,664 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:24:16,665 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:24:17,967 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:23,014 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:27,421 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:24:27,422 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:24:27,423 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:24:27,425 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:24:28,086 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:24:28,435 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:31,649 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:24:31,665 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:24:31,666 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:24:32,919 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:24:33,933 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:38,969 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:44,001 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:46,652 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:24:46,666 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:24:46,667 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:24:49,048 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:51,341 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:24:51,343 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:24:51,343 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:24:51,345 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:24:52,275 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:24:54,358 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:24:59,367 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:01,668 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:25:01,684 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:25:01,685 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:25:02,925 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:25:04,940 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:06,769 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:25:06,771 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:25:06,771 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:25:06,773 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:25:07,450 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:25:10,785 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:15,847 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:16,674 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:25:16,690 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:25:16,690 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:25:21,073 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:26,082 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:26,378 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:25:26,380 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:25:26,380 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:25:26,382 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:25:26,625 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:25:31,420 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:31,692 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:25:31,692 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:25:31,694 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:25:32,931 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:25:36,951 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:41,959 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:42,222 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:25:42,224 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:25:42,225 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:25:42,227 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:25:42,756 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:25:46,690 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:25:46,691 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:25:46,706 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:25:47,106 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:52,172 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:57,201 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:25:58,254 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:25:58,256 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:25:58,256 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:25:58,258 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:25:58,949 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:26:01,687 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:26:01,688 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:26:01,718 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:26:02,934 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:26:02,937 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:07,967 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:13,019 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:14,346 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:26:14,347 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:26:14,348 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:26:14,349 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:26:15,083 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:26:16,701 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:26:16,702 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:26:16,734 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:26:19,034 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:24,067 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:29,131 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:31,721 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:26:31,722 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:26:31,736 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:26:32,945 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:26:34,974 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:38,606 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:26:38,607 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:26:38,608 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:26:38,610 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:26:39,406 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:26:40,619 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:45,679 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:46,728 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:26:46,729 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:26:46,748 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:26:51,173 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:26:54,548 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:26:54,550 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:26:54,551 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:26:54,552 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:26:54,562 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:26:56,575 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:01,616 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:01,742 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:27:01,743 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:27:01,756 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:27:02,948 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:27:06,975 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:10,504 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:27:10,506 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:27:10,507 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:27:10,508 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:27:10,684 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:27:12,529 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:16,766 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:27:16,767 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:27:16,918 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:27:18,127 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:23,163 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:26,640 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:27:26,642 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:27:26,642 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:27:26,644 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:27:26,849 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:27:28,661 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:31,775 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:27:31,776 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:27:31,777 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:27:32,950 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:27:33,967 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:38,989 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:44,009 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:46,792 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:27:46,793 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:27:46,793 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:27:49,205 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:52,614 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:27:52,616 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:27:52,616 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:27:52,618 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:27:53,084 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:27:54,627 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:27:59,636 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:01,806 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:28:01,807 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:28:01,814 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:28:02,958 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:28:04,972 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:09,995 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:15,041 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:16,196 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:28:16,198 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:28:16,198 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:28:16,200 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:28:16,312 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:28:16,801 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:28:16,802 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:28:16,817 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:28:20,231 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:25,283 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:30,327 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:31,807 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:28:31,808 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:28:31,822 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:28:32,967 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:28:35,946 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:28:35,948 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:28:35,949 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:28:35,949 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:35,950 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:28:36,459 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:28:40,960 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:45,964 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:46,822 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:28:46,823 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:28:46,838 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:28:51,216 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:28:53,018 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:28:53,020 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:28:53,021 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:28:53,022 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:28:53,613 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:28:57,057 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:01,848 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:29:01,849 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:29:01,850 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:29:02,291 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:02,977 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:29:08,024 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:10,176 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:29:10,177 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:29:10,178 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:29:10,180 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:29:10,824 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:29:13,205 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:16,893 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:29:16,893 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:29:16,894 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:29:18,231 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:23,252 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:26,173 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:29:26,174 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:29:26,175 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:29:26,176 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:29:26,943 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:29:29,184 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:31,888 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:29:31,907 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:29:31,908 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:29:32,986 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:29:35,004 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:40,035 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:45,076 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:46,895 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:29:46,910 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:29:46,911 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:29:50,447 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:29:50,448 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:29:50,448 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:29:50,450 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:29:50,451 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:29:51,156 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:29:55,481 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:00,522 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:01,910 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:30:01,910 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:30:01,911 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:30:02,998 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:30:06,026 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:06,357 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:30:06,359 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:30:06,359 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:30:06,361 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:30:07,321 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:30:07,322 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\output.log
+2023-09-26 18:30:09,352 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\output.log
+2023-09-26 18:30:11,386 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:16,435 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:16,913 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:30:16,914 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:30:16,915 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:30:22,312 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:27,321 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:31,917 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:30:31,918 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:30:31,918 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:30:33,000 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:30:33,003 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:38,036 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:43,084 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:47,027 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:30:47,028 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:30:47,095 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:30:48,400 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:53,461 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:30:58,524 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:01,984 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:31:01,985 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:31:02,112 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:31:03,962 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:31:03,964 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:08,987 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:14,022 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:15,542 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:31:15,543 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:31:15,544 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:31:15,545 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:31:16,196 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:31:17,008 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:31:17,009 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:31:17,118 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:31:17,213 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\output.log
+2023-09-26 18:31:19,388 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:24,417 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:29,463 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:31,989 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 18:31:31,990 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 18:31:32,193 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:31:32,917 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-26 18:31:32,919 DEBUG   SenderThread:6704 [sender.py:send():380] send: history
+2023-09-26 18:31:32,920 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: summary_record
+2023-09-26 18:31:32,921 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:31:32,941 DEBUG   SenderThread:6704 [sender.py:send():380] send: exit
+2023-09-26 18:31:32,941 INFO    SenderThread:6704 [sender.py:send_exit():585] handling exit code: 0
+2023-09-26 18:31:32,942 INFO    SenderThread:6704 [sender.py:send_exit():587] handling runtime: 1050
+2023-09-26 18:31:32,942 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:31:32,943 INFO    SenderThread:6704 [sender.py:send_exit():593] send defer
+2023-09-26 18:31:32,943 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,943 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 0
+2023-09-26 18:31:32,944 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,944 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-09-26 18:31:32,944 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 1
+2023-09-26 18:31:32,944 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,944 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 1
+2023-09-26 18:31:32,945 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,945 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-09-26 18:31:32,945 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 2
+2023-09-26 18:31:32,945 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,945 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 2
+2023-09-26 18:31:32,945 INFO    HandlerThread:6704 [system_monitor.py:finish():190] Stopping system monitor
+2023-09-26 18:31:32,946 DEBUG   SystemMonitor:6704 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-09-26 18:31:32,947 INFO    HandlerThread:6704 [interfaces.py:finish():202] Joined cpu monitor
+2023-09-26 18:31:32,947 DEBUG   SystemMonitor:6704 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-09-26 18:31:32,947 INFO    HandlerThread:6704 [interfaces.py:finish():202] Joined disk monitor
+2023-09-26 18:31:32,982 INFO    HandlerThread:6704 [interfaces.py:finish():202] Joined gpu monitor
+2023-09-26 18:31:32,983 INFO    HandlerThread:6704 [interfaces.py:finish():202] Joined memory monitor
+2023-09-26 18:31:32,983 INFO    HandlerThread:6704 [interfaces.py:finish():202] Joined network monitor
+2023-09-26 18:31:32,985 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,985 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-09-26 18:31:32,985 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 3
+2023-09-26 18:31:32,985 DEBUG   SenderThread:6704 [sender.py:send():380] send: stats
+2023-09-26 18:31:32,985 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,987 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 3
+2023-09-26 18:31:32,987 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,988 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-09-26 18:31:32,988 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 4
+2023-09-26 18:31:32,988 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,988 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 4
+2023-09-26 18:31:32,989 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,989 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-09-26 18:31:32,989 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 5
+2023-09-26 18:31:32,989 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,990 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 5
+2023-09-26 18:31:32,991 DEBUG   SenderThread:6704 [sender.py:send():380] send: summary
+2023-09-26 18:31:32,992 INFO    SenderThread:6704 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-09-26 18:31:32,993 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,993 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-09-26 18:31:32,993 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 6
+2023-09-26 18:31:32,994 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,994 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 6
+2023-09-26 18:31:32,995 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,995 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-09-26 18:31:32,995 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 7
+2023-09-26 18:31:32,995 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 18:31:32,996 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:32,996 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 7
+2023-09-26 18:31:32,997 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:32,997 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-09-26 18:31:33,383 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:31:33,954 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:34,802 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 8
+2023-09-26 18:31:34,802 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:34,803 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:34,804 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 8
+2023-09-26 18:31:34,805 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:34,805 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-09-26 18:31:34,806 INFO    SenderThread:6704 [job_builder.py:build():281] Attempting to build job artifact
+2023-09-26 18:31:34,807 INFO    SenderThread:6704 [job_builder.py:_get_source_type():404] no source found
+2023-09-26 18:31:34,808 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 9
+2023-09-26 18:31:34,808 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:34,808 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 9
+2023-09-26 18:31:34,809 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:34,809 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-09-26 18:31:34,809 INFO    SenderThread:6704 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-09-26 18:31:34,969 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:35,396 INFO    Thread-12 :6704 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\output.log
+2023-09-26 18:31:35,399 INFO    SenderThread:6704 [dir_watcher.py:finish():388] scan: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files
+2023-09-26 18:31:35,400 INFO    SenderThread:6704 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\conda-environment.yaml conda-environment.yaml
+2023-09-26 18:31:35,401 INFO    SenderThread:6704 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\config.yaml config.yaml
+2023-09-26 18:31:35,407 INFO    SenderThread:6704 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\output.log output.log
+2023-09-26 18:31:35,415 INFO    SenderThread:6704 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\requirements.txt requirements.txt
+2023-09-26 18:31:35,417 INFO    SenderThread:6704 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-metadata.json wandb-metadata.json
+2023-09-26 18:31:35,424 INFO    SenderThread:6704 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json wandb-summary.json
+2023-09-26 18:31:35,431 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 10
+2023-09-26 18:31:35,431 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:35,432 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:35,437 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 10
+2023-09-26 18:31:35,439 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:35,439 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-09-26 18:31:35,440 INFO    SenderThread:6704 [file_pusher.py:finish():175] shutting down file pusher
+2023-09-26 18:31:35,983 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:35,984 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:36,997 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:36,998 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:37,018 INFO    wandb-upload_0:6704 [upload_job.py:push():131] Uploaded file C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\conda-environment.yaml
+2023-09-26 18:31:37,932 INFO    wandb-upload_3:6704 [upload_job.py:push():131] Uploaded file C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\requirements.txt
+2023-09-26 18:31:37,953 INFO    wandb-upload_2:6704 [upload_job.py:push():131] Uploaded file C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\output.log
+2023-09-26 18:31:37,997 INFO    wandb-upload_4:6704 [upload_job.py:push():131] Uploaded file C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\wandb-summary.json
+2023-09-26 18:31:38,002 INFO    wandb-upload_1:6704 [upload_job.py:push():131] Uploaded file C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\files\config.yaml
+2023-09-26 18:31:38,013 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:38,014 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:38,218 INFO    Thread-11 (_thread_body):6704 [sender.py:transition_state():613] send defer: 11
+2023-09-26 18:31:38,218 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:38,219 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 11
+2023-09-26 18:31:38,220 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:38,220 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-09-26 18:31:38,220 INFO    SenderThread:6704 [file_pusher.py:join():181] waiting for file pusher
+2023-09-26 18:31:38,220 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 12
+2023-09-26 18:31:38,221 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:38,221 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 12
+2023-09-26 18:31:38,222 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:38,222 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-09-26 18:31:38,222 INFO    SenderThread:6704 [file_stream.py:finish():595] file stream finish called
+2023-09-26 18:31:38,545 INFO    SenderThread:6704 [file_stream.py:finish():599] file stream finish is done
+2023-09-26 18:31:38,546 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 13
+2023-09-26 18:31:38,546 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:38,547 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 13
+2023-09-26 18:31:38,547 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:38,548 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-09-26 18:31:38,548 INFO    SenderThread:6704 [sender.py:transition_state():613] send defer: 14
+2023-09-26 18:31:38,549 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: defer
+2023-09-26 18:31:38,549 DEBUG   SenderThread:6704 [sender.py:send():380] send: final
+2023-09-26 18:31:38,549 INFO    HandlerThread:6704 [handler.py:handle_request_defer():170] handle defer: 14
+2023-09-26 18:31:38,550 DEBUG   SenderThread:6704 [sender.py:send():380] send: footer
+2023-09-26 18:31:38,550 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: defer
+2023-09-26 18:31:38,550 INFO    SenderThread:6704 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-09-26 18:31:38,551 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:38,553 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-26 18:31:38,553 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: server_info
+2023-09-26 18:31:38,554 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:38,554 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: get_summary
+2023-09-26 18:31:38,555 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: poll_exit
+2023-09-26 18:31:38,556 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: sampled_history
+2023-09-26 18:31:38,556 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: server_info
+2023-09-26 18:31:38,558 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 18:31:38,563 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: job_info
+2023-09-26 18:31:38,846 DEBUG   SenderThread:6704 [sender.py:send_request():407] send_request: job_info
+2023-09-26 18:31:38,847 INFO    MainThread:6704 [wandb_run.py:_footer_history_summary_info():3554] rendering history
+2023-09-26 18:31:38,848 INFO    MainThread:6704 [wandb_run.py:_footer_history_summary_info():3586] rendering summary
+2023-09-26 18:31:38,848 INFO    MainThread:6704 [wandb_run.py:_footer_sync_info():3513] logging synced files
+2023-09-26 18:31:38,849 DEBUG   HandlerThread:6704 [handler.py:handle_request():144] handle_request: shutdown
+2023-09-26 18:31:38,850 INFO    HandlerThread:6704 [handler.py:finish():844] shutting down handler
+2023-09-26 18:31:39,567 INFO    WriterThread:6704 [datastore.py:close():294] close: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_181400-a11i8xgt\run-a11i8xgt.wandb
+2023-09-26 18:31:39,853 INFO    SenderThread:6704 [sender.py:finish():1534] shutting down sender
+2023-09-26 18:31:39,853 INFO    SenderThread:6704 [file_pusher.py:finish():175] shutting down file pusher
+2023-09-26 18:31:39,853 INFO    SenderThread:6704 [file_pusher.py:join():181] waiting for file pusher

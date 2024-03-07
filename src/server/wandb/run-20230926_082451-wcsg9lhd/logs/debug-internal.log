@@ -1,0 +1,93 @@
+2023-09-26 08:24:51,230 INFO    StreamThr :13252 [internal.py:wandb_internal():86] W&B internal server running at pid: 13252, started at: 2023-09-26 08:24:51.228430
+2023-09-26 08:24:51,234 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status
+2023-09-26 08:24:51,244 INFO    WriterThread:13252 [datastore.py:open_for_write():85] open: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\run-wcsg9lhd.wandb
+2023-09-26 08:24:51,246 DEBUG   SenderThread:13252 [sender.py:send():380] send: header
+2023-09-26 08:24:51,247 DEBUG   SenderThread:13252 [sender.py:send():380] send: run
+2023-09-26 08:24:52,414 INFO    SenderThread:13252 [dir_watcher.py:__init__():211] watching files in: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files
+2023-09-26 08:24:52,415 INFO    SenderThread:13252 [sender.py:_start_run_threads():1122] run started: wcsg9lhd with start time 1695702291.229425
+2023-09-26 08:24:52,433 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: check_version
+2023-09-26 08:24:52,433 DEBUG   SenderThread:13252 [sender.py:send_request():407] send_request: check_version
+2023-09-26 08:24:53,078 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: run_start
+2023-09-26 08:24:53,126 DEBUG   HandlerThread:13252 [system_info.py:__init__():32] System info init
+2023-09-26 08:24:53,126 DEBUG   HandlerThread:13252 [system_info.py:__init__():47] System info init done
+2023-09-26 08:24:53,127 INFO    HandlerThread:13252 [system_monitor.py:start():181] Starting system monitor
+2023-09-26 08:24:53,127 INFO    SystemMonitor:13252 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-09-26 08:24:53,128 INFO    HandlerThread:13252 [system_monitor.py:probe():201] Collecting system info
+2023-09-26 08:24:53,134 INFO    SystemMonitor:13252 [interfaces.py:start():190] Started cpu monitoring
+2023-09-26 08:24:53,135 INFO    SystemMonitor:13252 [interfaces.py:start():190] Started disk monitoring
+2023-09-26 08:24:53,138 INFO    SystemMonitor:13252 [interfaces.py:start():190] Started gpu monitoring
+2023-09-26 08:24:53,146 INFO    SystemMonitor:13252 [interfaces.py:start():190] Started memory monitoring
+2023-09-26 08:24:53,155 INFO    SystemMonitor:13252 [interfaces.py:start():190] Started network monitoring
+2023-09-26 08:24:53,179 DEBUG   HandlerThread:13252 [system_info.py:probe():196] Probing system
+2023-09-26 08:24:53,180 DEBUG   HandlerThread:13252 [system_info.py:probe():244] Probing system done
+2023-09-26 08:24:53,180 DEBUG   HandlerThread:13252 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.10.13', 'heartbeatAt': '2023-09-26T04:24:53.180425', 'startedAt': '2023-09-26T04:24:51.217477', 'docker': None, 'cuda': None, 'args': ('-d', 'ucf', '-m', 'c2fpl', '--global_testset', '1', '-bs', '128', '--global_epoch', '25', '--test_gap', '25', '--local_epoch', '10', '--partition', 'partition_25.pkl'), 'state': 'running', 'program': 'C:\\Users\\User\\PycharmProjects\\FL_AD\\src\\server\\fedavg.py', 'codePathLocal': 'fedavg.py', 'codePath': 'fedavg.py', 'host': 'DESKTOP-B1GU9KD', 'username': 'User', 'executable': 'C:\\Users\\User\\.conda\\envs\\Federate_learning_project\\python.exe', 'cpu_count': 10, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2394.0, 'min': 0.0, 'max': 2394.0}, 'cpu_freq_per_core': [{'current': 2394.0, 'min': 0.0, 'max': 2394.0}], 'disk': {'/': {'total': 1862.4036293029785, 'used': 1169.308536529541}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 127.65470504760742}}
+2023-09-26 08:24:53,181 INFO    HandlerThread:13252 [system_monitor.py:probe():211] Finished collecting system info
+2023-09-26 08:24:53,181 INFO    HandlerThread:13252 [system_monitor.py:probe():214] Publishing system info
+2023-09-26 08:24:53,181 DEBUG   HandlerThread:13252 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-09-26 08:24:53,182 DEBUG   HandlerThread:13252 [system_info.py:_save_pip():68] Saving pip packages done
+2023-09-26 08:24:53,183 DEBUG   HandlerThread:13252 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-09-26 08:24:53,427 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\requirements.txt
+2023-09-26 08:24:53,427 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\conda-environment.yaml
+2023-09-26 08:25:06,945 DEBUG   HandlerThread:13252 [system_info.py:_save_conda():87] Saving conda packages done
+2023-09-26 08:25:06,947 INFO    HandlerThread:13252 [system_monitor.py:probe():216] Finished publishing system info
+2023-09-26 08:25:06,959 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:06,960 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: keepalive
+2023-09-26 08:25:06,960 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:06,961 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: keepalive
+2023-09-26 08:25:06,962 DEBUG   SenderThread:13252 [sender.py:send():380] send: files
+2023-09-26 08:25:06,962 INFO    SenderThread:13252 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-09-26 08:25:06,970 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 08:25:06,972 DEBUG   SenderThread:13252 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 08:25:06,974 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 08:25:07,359 DEBUG   SenderThread:13252 [sender.py:send():380] send: telemetry
+2023-09-26 08:25:07,360 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:07,464 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\conda-environment.yaml
+2023-09-26 08:25:07,465 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\wandb-metadata.json
+2023-09-26 08:25:08,920 INFO    wandb-upload_0:13252 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmp77ti1o9bwandb\ft9p6qin-wandb-metadata.json
+2023-09-26 08:25:12,401 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:16,538 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\output.log
+2023-09-26 08:25:17,762 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:18,543 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\output.log
+2023-09-26 08:25:21,982 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 08:25:21,983 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 08:25:21,984 DEBUG   SenderThread:13252 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 08:25:23,361 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:24,560 INFO    Thread-12 :13252 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\config.yaml
+2023-09-26 08:25:28,759 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:33,799 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:36,985 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-26 08:25:36,986 DEBUG   SenderThread:13252 [sender.py:send_request():407] send_request: stop_status
+2023-09-26 08:25:37,000 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: internal_messages
+2023-09-26 08:25:39,358 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:44,403 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:49,445 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:53,174 DEBUG   SystemMonitor:13252 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-09-26 08:25:53,177 DEBUG   SenderThread:13252 [sender.py:send():380] send: stats
+2023-09-26 08:25:55,194 DEBUG   HandlerThread:13252 [handler.py:handle_request():144] handle_request: status_report
+2023-09-26 08:25:55,687 INFO    memory    :13252 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2023-09-26 08:25:55,687 DEBUG   SystemMonitor:13252 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-09-26 08:25:55,687 DEBUG   SystemMonitor:13252 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-09-26 08:25:55,703 DEBUG   SenderThread:13252 [sender.py:send():380] send: stats
+2023-09-26 08:25:56,797 WARNING StreamThr :13252 [internal.py:is_dead():414] Internal process exiting, parent pid 8144 disappeared
+2023-09-26 08:25:56,797 ERROR   StreamThr :13252 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-09-26 08:25:57,791 INFO    WriterThread:13252 [datastore.py:close():294] close: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\run-wcsg9lhd.wandb
+2023-09-26 08:25:57,791 INFO    HandlerThread:13252 [handler.py:finish():844] shutting down handler
+2023-09-26 08:25:57,791 INFO    HandlerThread:13252 [system_monitor.py:finish():190] Stopping system monitor
+2023-09-26 08:25:57,791 INFO    HandlerThread:13252 [interfaces.py:finish():202] Joined cpu monitor
+2023-09-26 08:25:57,791 INFO    HandlerThread:13252 [interfaces.py:finish():202] Joined disk monitor
+2023-09-26 08:25:57,792 INFO    HandlerThread:13252 [interfaces.py:finish():202] Joined gpu monitor
+2023-09-26 08:25:57,792 INFO    HandlerThread:13252 [interfaces.py:finish():202] Joined memory monitor
+2023-09-26 08:25:57,793 INFO    HandlerThread:13252 [interfaces.py:finish():202] Joined network monitor
+2023-09-26 08:25:57,807 INFO    SenderThread:13252 [sender.py:finish():1534] shutting down sender
+2023-09-26 08:25:57,951 INFO    SenderThread:13252 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-09-26 08:25:58,521 INFO    MainThread:13252 [internal.py:handle_exit():76] Internal process exited
+2023-09-26 08:25:58,820 INFO    SenderThread:13252 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\output.log
+2023-09-26 08:25:58,821 INFO    SenderThread:13252 [dir_watcher.py:finish():388] scan: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files
+2023-09-26 08:25:58,821 INFO    SenderThread:13252 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\conda-environment.yaml conda-environment.yaml
+2023-09-26 08:25:58,822 INFO    SenderThread:13252 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\config.yaml config.yaml
+2023-09-26 08:25:58,824 INFO    SenderThread:13252 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\output.log output.log
+2023-09-26 08:25:58,824 INFO    SenderThread:13252 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\requirements.txt requirements.txt
+2023-09-26 08:25:58,825 INFO    SenderThread:13252 [dir_watcher.py:finish():402] scan save: C:\Users\User\PycharmProjects\FL_AD\src\server\wandb\run-20230926_082451-wcsg9lhd\files\wandb-metadata.json wandb-metadata.json
+2023-09-26 08:25:58,826 INFO    SenderThread:13252 [file_pusher.py:finish():175] shutting down file pusher
+2023-09-26 08:25:58,826 INFO    SenderThread:13252 [file_pusher.py:join():181] waiting for file pusher
+2023-09-26 08:25:58,827 INFO    SenderThread:13252 [file_stream.py:finish():595] file stream finish called
