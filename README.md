@@ -2,7 +2,7 @@
 [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](https://anasemad11.github.io/)
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2404.00847)
 
-> [**Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline**](http://arxiv.org/abs/2403.18293)<br>
+> [**Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline**](https://arxiv.org/abs/2404.00847)<br>
 > [Anas Al-lahham](https://anasemad11.github.io/), [Muhammad Zaigham Zaheer](https://www.linkedin.com/in/zaighamzaheer/?originalSubdomain=kr), [Nubrek Tastan](https://www.linkedin.com/in/nurbek-tastan/), [Karthik Nandakumar](https://www.linkedin.com/in/karthik-nandakumar-5504465/)
 
 Official implementation of the paper: "Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline" [CVPR 2024].
@@ -25,7 +25,6 @@ All the required datasets and evaluation scenarios will released soon!
 
 
 ## Citation
-
 
 
 
