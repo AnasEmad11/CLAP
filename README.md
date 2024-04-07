@@ -1,5 +1,5 @@
 # Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline
-[![Website](https://img.shields.io/badge/Project-Website-87CEEB)](https://anasemad11.github.io/)
+[![Website](https://img.shields.io/badge/Project-Website-87CEEB)](https://anasemad11.github.io/CLAP/)
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2404.00847)
 
 > [**Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline**](https://arxiv.org/abs/2404.00847)<br>
