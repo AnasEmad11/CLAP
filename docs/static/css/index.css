@@ -155,3 +155,20 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-container img {
+  width: 50px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.icon-text {
+  font-size: 12px; /* Adjust as needed */
+  margin-top: 5px; /* Adjust as needed */
+}
