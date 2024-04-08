@@ -158,17 +158,23 @@ body {
 
 
 .icon-container {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
 }
 
 .icon-container img {
-  width: 50px; /* Adjust as needed */
+  width: 100px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
-.icon-text {
-  font-size: 12px; /* Adjust as needed */
+.icon-container .icon-text {
+  font-size: 14px; /* Adjust as needed */
   margin-top: 5px; /* Adjust as needed */
+}
+
+.icon-container {
+  background-color: white;
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 8px; /* Adjust border radius as needed */
 }
