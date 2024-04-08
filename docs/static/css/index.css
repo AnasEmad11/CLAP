@@ -161,6 +161,10 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  background-color: white; /* Set background color to white */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 50%; /* Make the shape round */
+  position: relative; /* Add position relative */
 }
 
 .icon-container img {
@@ -171,10 +175,8 @@ body {
 .icon-container .icon-text {
   font-size: 14px; /* Adjust as needed */
   margin-top: 5px; /* Adjust as needed */
-}
-
-.icon-container {
-  background-color: white;
-  padding: 10px; /* Adjust padding as needed */
-  border-radius: 8px; /* Adjust border radius as needed */
+  position: absolute; /* Position the text absolutely */
+  bottom: -15px; /* Adjust the value to position the text */
+  left: 50%; /* Center the text */
+  transform: translateX(-50%); /* Center the text horizontally */
 }
