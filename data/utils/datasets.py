@@ -16,7 +16,9 @@ from torchvision import transforms
 from torchvision.transforms.functional import pil_to_tensor
 from torch.utils.data import Dataset
 import matplotlib.pyplot as plt
+from sklearn.mixture import GaussianMixture
 
+import torch.utils.data as data
 
 class BaseDataset(Dataset):
     def __init__(self) -> None:
@@ -25,635 +27,32 @@ class BaseDataset(Dataset):
         self.targets: torch.Tensor = None
         self.train_data_transform = None
         self.train_target_transform = None
-        self.general_data_transform = None
-        self.general_target_transform = None
-        self.enable_train_transform = True
+        self.test_data_transform = None
+        self.test_target_transform = None
+        self.data_transform = None
+        self.target_transform = None
 
     def __getitem__(self, index):
         data, targets = self.data[index], self.targets[index]
-        if self.enable_train_transform and self.train_data_transform is not None:
-            data = self.train_data_transform(data)
-        if self.enable_train_transform and self.train_target_transform is not None:
-            targets = self.train_target_transform(targets)
-        if self.general_data_transform is not None:
-            data = self.general_data_transform(data)
-        if self.general_target_transform is not None:
-            targets = self.general_target_transform(targets)
+        if self.data_transform is not None:
+            data = self.data_transform(data)
+        if self.target_transform is not None:
+            targets = self.target_transform(targets)
+
         return data, targets
+
+    def train(self):
+        self.data_transform = self.train_data_transform
+        self.target_transform = self.train_target_transform
+
+    def eval(self):
+        self.data_transform = self.test_data_transform
+        self.target_transform = self.test_target_transform
 
     def __len__(self):
         return len(self.targets)
-
-
-class FEMNIST(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ) -> None:
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        if not os.path.isfile(root / "data.npy") or not os.path.isfile(
-            root / "targets.npy"
-        ):
-            raise RuntimeError(
-                "run data/utils/run.py -d femnist for generating the data.npy and targets.npy first."
-            )
-
-        data = np.load(root / "data.npy")
-        targets = np.load(root / "targets.npy")
-
-        self.data = torch.from_numpy(data).float().reshape(-1, 1, 28, 28)
-        self.targets = torch.from_numpy(targets).long()
-        self.classes = list(range(62))
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class Synthetic(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ) -> None:
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        if not os.path.isfile(root / "data.npy") or not os.path.isfile(
-            root / "targets.npy"
-        ):
-            raise RuntimeError(
-                "run data/utils/run.py -d femnist for generating the data.npy and targets.npy first."
-            )
-
-        data = np.load(root / "data.npy")
-        targets = np.load(root / "targets.npy")
-
-        self.data = torch.from_numpy(data).float()
-        self.targets = torch.from_numpy(targets).long()
-        self.classes = list(range(len(self.targets.unique())))
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class CelebA(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ) -> None:
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        if not os.path.isfile(root / "data.npy") or not os.path.isfile(
-            root / "targets.npy"
-        ):
-            raise RuntimeError(
-                "run data/utils/run.py -d femnist for generating the data.npy and targets.npy first."
-            )
-
-        data = np.load(root / "data.npy")
-        targets = np.load(root / "targets.npy")
-
-        self.data = torch.from_numpy(data).permute([0, -1, 1, 2]).float()
-        self.targets = torch.from_numpy(targets).long()
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-        self.classes = [0, 1]
-
-
-class MedMNIST(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        self.classes = list(range(11))
-        self.data = (
-            torch.Tensor(np.load(root / "raw" / "xdata.npy")).float().unsqueeze(1)
-        )
-        self.targets = (
-            torch.Tensor(np.load(root / "raw" / "ydata.npy")).long().squeeze()
-        )
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class COVID19(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        self.data = (
-            torch.Tensor(np.load(root / "raw" / "xdata.npy"))
-            .permute([0, -1, 1, 2])
-            .float()
-        )
-        self.targets = (
-            torch.Tensor(np.load(root / "raw" / "ydata.npy")).long().squeeze()
-        )
-        self.classes = [0, 1, 2, 3]
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class USPS(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        train_part = torchvision.datasets.USPS(root / "raw", True, download=True)
-        test_part = torchvision.datasets.USPS(root / "raw", False, download=True)
-        train_data = torch.Tensor(train_part.data).float().unsqueeze(1)
-        test_data = torch.Tensor(test_part.data).float().unsqueeze(1)
-        train_targets = torch.Tensor(train_part.targets).long()
-        test_targets = torch.Tensor(test_part.targets).long()
-
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = list(range(10))
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class SVHN(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        train_part = torchvision.datasets.SVHN(root / "raw", "train", download=True)
-        test_part = torchvision.datasets.SVHN(root / "raw", "test", download=True)
-        train_data = torch.Tensor(train_part.data).float()
-        test_data = torch.Tensor(test_part.data).float()
-        train_targets = torch.Tensor(train_part.labels).long()
-        test_targets = torch.Tensor(test_part.labels).long()
-
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = list(range(10))
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class MNIST(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        train_part = torchvision.datasets.MNIST(root, True, download=True)
-        test_part = torchvision.datasets.MNIST(root, False)
-        train_data = torch.Tensor(train_part.data).float().unsqueeze(1)
-        test_data = torch.Tensor(test_part.data).float().unsqueeze(1)
-        train_targets = torch.Tensor(train_part.targets).long().squeeze()
-        test_targets = torch.Tensor(test_part.targets).long().squeeze()
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = train_part.classes
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class FashionMNIST(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        train_part = torchvision.datasets.FashionMNIST(root, True, download=True)
-        test_part = torchvision.datasets.FashionMNIST(root, False, download=True)
-        train_data = torch.Tensor(train_part.data).float().unsqueeze(1)
-        test_data = torch.Tensor(test_part.data).float().unsqueeze(1)
-        train_targets = torch.Tensor(train_part.targets).long().squeeze()
-        test_targets = torch.Tensor(test_part.targets).long().squeeze()
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = train_part.classes
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class EMNIST(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        split = None
-        if isinstance(args, Namespace):
-            split = args.emnist_split
-        elif isinstance(args, dict):
-            split = args["emnist_split"]
-        train_part = torchvision.datasets.EMNIST(
-            root, split=split, train=True, download=True
-        )
-        test_part = torchvision.datasets.EMNIST(
-            root, split=split, train=False, download=True
-        )
-        train_data = torch.Tensor(train_part.data).float().unsqueeze(1)
-        test_data = torch.Tensor(test_part.data).float().unsqueeze(1)
-        train_targets = torch.Tensor(train_part.targets).long().squeeze()
-        test_targets = torch.Tensor(test_part.targets).long().squeeze()
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = train_part.classes
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class CIFAR10(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        train_part = torchvision.datasets.CIFAR10(root, True, download=True)
-        test_part = torchvision.datasets.CIFAR10(root, False, download=True)
-        train_data = torch.Tensor(train_part.data).permute([0, -1, 1, 2]).float()
-        test_data = torch.Tensor(test_part.data).permute([0, -1, 1, 2]).float()
-        train_targets = torch.Tensor(train_part.targets).long().squeeze()
-        test_targets = torch.Tensor(test_part.targets).long().squeeze()
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = train_part.classes
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class CIFAR100(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        train_part = torchvision.datasets.CIFAR100(root, True, download=True)
-        test_part = torchvision.datasets.CIFAR100(root, False, download=True)
-        train_data = torch.Tensor(train_part.data).permute([0, -1, 1, 2]).float()
-        test_data = torch.Tensor(test_part.data).permute([0, -1, 1, 2]).float()
-        train_targets = torch.Tensor(train_part.targets).long().squeeze()
-        test_targets = torch.Tensor(test_part.targets).long().squeeze()
-        self.data = torch.cat([train_data, test_data])
-        self.targets = torch.cat([train_targets, test_targets])
-        self.classes = train_part.classes
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-        super_class = None
-        if isinstance(args, Namespace):
-            super_class = args.super_class
-        elif isinstance(args, dict):
-            super_class = args["super_class"]
-
-        if super_class:
-            # super_class: [sub_classes]
-            CIFAR100_SUPER_CLASS = {
-                0: ["beaver", "dolphin", "otter", "seal", "whale"],
-                1: ["aquarium_fish", "flatfish", "ray", "shark", "trout"],
-                2: ["orchid", "poppy", "rose", "sunflower", "tulip"],
-                3: ["bottle", "bowl", "can", "cup", "plate"],
-                4: ["apple", "mushroom", "orange", "pear", "sweet_pepper"],
-                5: ["clock", "keyboard", "lamp", "telephone", "television"],
-                6: ["bed", "chair", "couch", "table", "wardrobe"],
-                7: ["bee", "beetle", "butterfly", "caterpillar", "cockroach"],
-                8: ["bear", "leopard", "lion", "tiger", "wolf"],
-                9: ["cloud", "forest", "mountain", "plain", "sea"],
-                10: ["bridge", "castle", "house", "road", "skyscraper"],
-                11: ["camel", "cattle", "chimpanzee", "elephant", "kangaroo"],
-                12: ["fox", "porcupine", "possum", "raccoon", "skunk"],
-                13: ["crab", "lobster", "snail", "spider", "worm"],
-                14: ["baby", "boy", "girl", "man", "woman"],
-                15: ["crocodile", "dinosaur", "lizard", "snake", "turtle"],
-                16: ["hamster", "mouse", "rabbit", "shrew", "squirrel"],
-                17: ["maple_tree", "oak_tree", "palm_tree", "pine_tree", "willow_tree"],
-                18: ["bicycle", "bus", "motorcycle", "pickup_truck", "train"],
-                19: ["lawn_mower", "rocket", "streetcar", "tank", "tractor"],
-            }
-            mapping = {}
-            for super_cls, sub_cls in CIFAR100_SUPER_CLASS.items():
-                for cls in sub_cls:
-                    mapping[cls] = super_cls
-            new_targets = []
-            for cls in self.targets:
-                new_targets.append(mapping[self.classes[cls]])
-            self.targets = torch.tensor(new_targets, dtype=torch.long)
-
-
-class TinyImagenet(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        if not os.path.isdir(root / "raw"):
-            raise RuntimeError(
-                "Using `data/download/tiny_imagenet.sh` to download the dataset first."
-            )
-        self.classes = pd.read_table(
-            root / "raw/wnids.txt", sep="\t", engine="python", header=None
-        )[0].tolist()
-
-        if not os.path.isfile(root / "data.pt") or not os.path.isfile(
-            root / "targets.pt"
-        ):
-            mapping = dict(zip(self.classes, list(range(len(self.classes)))))
-            data = []
-            targets = []
-            for cls in os.listdir(root / "raw" / "train"):
-                for img_name in os.listdir(root / "raw" / "train" / cls / "images"):
-                    img = pil_to_tensor(
-                        Image.open(root / "raw" / "train" / cls / "images" / img_name)
-                    ).float()
-                    if img.shape[0] == 1:
-                        img = torch.expand_copy(img, [3, 64, 64])
-                    data.append(img)
-                    targets.append(mapping[cls])
-
-            table = pd.read_table(
-                root / "raw/val/val_annotations.txt",
-                sep="\t",
-                engine="python",
-                header=None,
-            )
-            test_classes = dict(zip(table[0].tolist(), table[1].tolist()))
-            for img_name in os.listdir(root / "raw" / "val" / "images"):
-                img = pil_to_tensor(
-                    Image.open(root / "raw" / "val" / "images" / img_name)
-                ).float()
-                if img.shape[0] == 1:
-                    img = torch.expand_copy(img, [3, 64, 64])
-                data.append(img)
-                targets.append(mapping[test_classes[img_name]])
-            torch.save(torch.stack(data), root / "data.pt")
-            torch.save(torch.tensor(targets, dtype=torch.long), root / "targets.pt")
-
-        self.data = torch.load(root / "data.pt")
-        self.targets = torch.load(root / "targets.pt")
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class CINIC10(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ):
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        if not os.path.isdir(root / "raw"):
-            raise RuntimeError(
-                "Using `data/download/tiny_imagenet.sh` to download the dataset first."
-            )
-        self.classes = [
-            "airplane",
-            "automobile",
-            "bird",
-            "cat",
-            "deer",
-            "dog",
-            "frog",
-            "horse",
-            "ship",
-            "truck",
-        ]
-        if not os.path.isfile(root / "data.pt") or not os.path.isfile(
-            root / "targets.pt"
-        ):
-            data = []
-            targets = []
-            mapping = dict(zip(self.classes, range(10)))
-            for folder in ["test", "train", "valid"]:
-                for cls in os.listdir(Path(root) / "raw" / folder):
-                    for img_name in os.listdir(root / "raw" / folder / cls):
-                        img = pil_to_tensor(
-                            Image.open(root / "raw" / folder / cls / img_name)
-                        ).float()
-                        if img.shape[0] == 1:
-                            img = torch.expand_copy(img, [3, 32, 32])
-                        data.append(img)
-                        targets.append(mapping[cls])
-            torch.save(torch.stack(data), root / "data.pt")
-            torch.save(torch.tensor(targets, dtype=torch.long), root / "targets.pt")
-
-        self.data = torch.load(root / "data.pt")
-        self.targets = torch.load(root / "targets.pt")
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-
-class DomainNet(BaseDataset):
-    def __init__(
-        self,
-        root,
-        args=None,
-        general_data_transform=None,
-        general_target_transform=None,
-        train_data_transform=None,
-        train_target_transform=None,
-    ) -> None:
-        super().__init__()
-        if not isinstance(root, Path):
-            root = Path(root)
-        if not os.path.isdir(root / "raw"):
-            raise RuntimeError(
-                "Using `data/download/domain.sh` to download the dataset first."
-            )
-        targets_path = root / "targets.pt"
-        metadata_path = root / "metadata.json"
-        filename_list_path = root / "filename_list.pkl"
-        if not (
-            os.path.isfile(targets_path)
-            and os.path.isfile(metadata_path)
-            and os.path.isfile(filename_list_path)
-        ):
-            raise RuntimeError(
-                "Run data/domain/preprocess.py to preprocess DomainNet first."
-            )
-
-        with open(metadata_path, "r") as f:
-            metadata = json.load(f)
-        with open(filename_list_path, "rb") as f:
-            self.filename_list = pickle.load(f)
-
-        self.classes = list(metadata["classes"].keys())
-        self.targets = torch.load(targets_path)
-        self.pre_transform = transforms.Compose(
-            [
-                transforms.Resize([metadata["image_size"], metadata["image_size"]]),
-                transforms.ToTensor(),
-            ]
-        )
-        self.general_data_transform = general_data_transform
-        self.general_target_transform = general_target_transform
-        self.train_data_transform = train_data_transform
-        self.train_target_transform = train_target_transform
-
-    def __getitem__(self, index):
-        data = self.pre_transform(Image.open(self.filename_list[index]).convert("RGB"))
-        targets = self.targets[index]
-        if self.enable_train_transform and self.train_data_transform is not None:
-            data = self.train_data_transform(data)
-        if self.enable_train_transform and self.train_target_transform is not None:
-            targets = self.train_target_transform(targets)
-        if self.general_data_transform is not None:
-            data = self.general_data_transform(data)
-        if self.general_target_transform is not None:
-            targets = self.general_target_transform(targets)
-        return data, targets
-
-import torch.utils.data as data
-# class Dataset_Con_all_feedback_XD(data.Dataset):
-#     def __init__(self,transform=None, test_mode=False):
-
-
-
-#         if test_mode:
-
-#             self.con_all = np.load("C:/Users/User/PycharmProjects/FL_AD/Concat_test_10.npy")
-#             print('self.con_all shape:',self.con_all.shape)
-#         else:
-            
-            
-#             # self.con_all = np.load('iterative_UCF_labels/'+'{}.npy'.format(args.conall))
-#             self.con_all = np.load('C:/Users/User/PycharmProjects/FL_AD/concat_UCF.npy')
-#             print('self.con_all shape:',self.con_all.shape)
-#             self.label_ab = np.load('C:/Users/User/PycharmProjects/FL_AD/Pseudo_Lebels_Maximum_AUC_0.8464948944321682.npy')
-#             self.label_all = np.concatenate((np.zeros((779951-len(self.label_ab),)),self.label_ab), axis=0)
-#             print('self.label_all shape:',self.label_all.shape)
-
-#         self.tranform = transform
-#         self.test_mode = test_mode
-        
-
-#     def __getitem__(self, index):
-
-
-#         if self.test_mode:
-#             features = self.con_all[index]
-#             features = np.array(features, dtype=np.float32)
-#             return features
-#         else:
-            
-#             features = self.con_all[index]
-#             features = np.array(features, dtype=np.float32)
-#             labels = np.array(self.label_all[index], dtype=np.float32)
-
-#             return features , labels
-#     def __len__(self):
-#         return len(self.con_all)
-
-# functions
-
 def estimate_gauss(X):
-    m = X.shape[0]   # using only first dimension as we know it has only one feature - l2 norm
+    m = X.shape[0]   
     
     mu = np.mean(X, axis=0)
     var = np.cov(X.T)
@@ -707,24 +106,24 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
             # break
         # print(f"Client {client_id} has {n_num} normal videon and {a_num} abnormal videos \n Total number of videos of {n_num + a_num}")
 
-        params = []
-        top_k = 30
-        for i in range(len(new_repr)):
-            entropy = 0
+        # params = []
+        # top_k = 30
+        # for i in range(len(new_repr)):
+        #     entropy = 0
 
-            param_1 = get_matrix(new_repr[i]) # l2 norm
-            mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
+        #     param_1 = get_matrix(new_repr[i]) # l2 norm
+        #     mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
 
-            l2_diff = np.diff(param_1, n=1) # max diff
-            var_diff = np.var(l2_diff) # variance of max diff
-            max_diff = np.max(np.diff(param_1, n=1))
-            param_2 = covariance_mat(new_repr[i])
-            param_2 = np.where(param_2 == 0, 0.000000001,param_2)
-            for i in np.diagonal(param_2):
-                entropy += -(i * np.log(i))
+        #     l2_diff = np.diff(param_1, n=1) # max diff
+        #     var_diff = np.var(l2_diff) # variance of max diff
+        #     max_diff = np.max(np.diff(param_1, n=1))
+        #     param_2 = covariance_mat(new_repr[i])
+        #     param_2 = np.where(param_2 == 0, 0.000000001,param_2)
+        #     for i in np.diagonal(param_2):
+        #         entropy += -(i * np.log(i))
 
 
-            params.append((max_diff,  entropy))
+        #     params.append((max_diff,  entropy))
 
 
         # params = []
@@ -759,42 +158,26 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
         #     params.append(np.diagonal(param_2[:top_k, :top_k]))
 
 
-        # params = []
+        params = []
 
-        # for i in range(len(new_repr)):
+        for i in range(len(new_repr)):
 
-        #     param = get_matrix(new_repr[i])
-        #     mu, var = estimate_gauss(param)
-
-
-        #     params.append((mu,var,))
+            param = get_matrix(new_repr[i])
+            mu, var = estimate_gauss(param)
 
 
+            params.append((mu,var,))
 
-
-        # from sklearn.decomposition import PCA
-        # pca = PCA(n_components=2)
-        # sample = pca.fit(params).transform(params)
-
-
-
-
-        from sklearn.mixture import GaussianMixture
-    
 
 
         gmm = GaussianMixture(n_components=2, max_iter=150, random_state=0)
 
         labels = gmm.fit_predict(params)
 
-        import matplotlib.pyplot as plt
-
-        # plt.scatter(sample[:, 0], sample[:, 1], c= labels)
-        # plt.title(f"Client {client_id} Clusters")
-        # wandb.log({f"Client {client_id} Clusters":  wandb.Image(plt)})
+        
 
 
-        import pandas as pd
+        
 
 
         sum_normal = 0
@@ -813,9 +196,6 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
                 set_2[client_video_num_partition['train'][i]] = new_repr[i]
                 sum_normal += params[i][1]
                 c_normal += 1
-
-
-
 
 
         if len(set_1.keys()) > len(set_2.keys()):
@@ -882,41 +262,11 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
 
 
-    # n = 0
-    # a = 0
-    # for i in range(len(new_repr)):
-        
-    #     if client_video_num_partition['train'][i] in normal_set.keys():
-    #         if client_video_num_partition['train'][i] > 809:
-    #             # plt.scatter(params[i][0], params[i][1], c= "blue", marker="o")
-    #             n += 1
-
-    #         # else:
-    #         #     # plt.scatter(params[i][0], params[i][1], c= "red", marker="o") 
-    #     else:
-    #         if client_video_num_partition['train'][i] <= 809:
-    #             # plt.scatter(params[i][0], params[i][1], c= "blue", marker="x")
-    #             a += 1
-            # else:
-            #     # plt.scatter(params[i][0], params[i][1], c= "red", marker="x") 
-            
-    # plt.title(f"Client {client_id} Clusters")
-    # wandb.log({f"Client {client_id} Clusters":  wandb.Image(plt)})
 
 
 
 
-    # df.loc[client_id, 'num_of_GT_normal'] = n_num
-    # df.loc[client_id , 'num_of_GT_abnormal'] = a_num
-    # df.loc[client_id, 'num_of_P_normal'] = len(normal_set.keys()) 
-    # df.loc[client_id , 'num_of_P_abnormal'] = len(abnormal_set.keys())  
-    # df.loc[client_id , 'Total_vids'] = n_num  + a_num
-    # df.loc[client_id, 'correct_normal'] = n
-    # df.loc[client_id , 'correct_abnormal'] = a 
-    # df.loc[client_id, 'normal_acc %'] = n/len(normal_set.keys()) 
-    # df.loc[client_id, 'abnormal_acc %'] = a/len(abnormal_set.keys()) 
 
-    # print(df)
 
     wandb.log({f"Client {client_id} Clustering ACC": wandb.Table(dataframe=df)})
 
@@ -928,45 +278,7 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
     p = multivariate_normal(mu_GMM, var_GMM)
 
 
-    # ground_truth = {} 
-    # length = 0.2 
-    # for (idel, sample) in abnormal_set.items(): 
 
-    #     # feature extraction 
-    #     # sample_matrix = np.sum(np.square(sample), axis=1)  # for just l2
-    #     sample_matrix = get_matrix(sample)
-        
-    #     # get p values
-    #     probs = p.pdf(sample_matrix)
-    #     temp_list = []
-    #     temp_list += [0.0] * len(probs)
-        
-    #     window_size = int(len(probs) * length)  # fixed
-    #     temp = []
-    #     for idx in range(0, len(probs) - window_size + 1):
-    #         arr = 0
-    #         for i in range(idx, idx + window_size - 1):
-    #             arr += abs(probs[i+1] - probs[i])
-    #         temp.append(arr)
-            
-
-    #     for i in range(temp.index(max(temp)), temp.index(max(temp)) + window_size):
-    #         temp_list[i] = 1.0
-
-    #     ground_truth[idel] = temp_list
-
-
-
-    # final_gt = {}
-    # p = 0
-    # for i in range(len(new_repr)):
-    #     idx_in_all = client_video_num_partition['train'][i]
-    #     if idx_in_all in normal_set.keys():
-    #         p += 1
-    #         final_gt[idx_in_all] = [0.0] * new_repr[i].shape[0]
-    #     else:
-    #         final_gt[idx_in_all] = ground_truth[idx_in_all]
-    # print(p)
     return None, df, (mu_GMM, var_GMM, client_sample_length, list(normal_set.keys()))
 
 
@@ -1379,12 +691,6 @@ def pl_refining(args, confidance_scores, total_clients):
         probs = confidance_scores[from_id:to_id]
 
 
-        # df_1.loc[idel] = [class_type, np.max(confidance_scores[from_id:to_id]), np.mean(confidance_scores[from_id:to_id])]
-        df_1.loc[idel, 'Class'] = class_type
-        df_1.loc[idel, 'max_confidance_score'] = np.max(confidance_scores[from_id:to_id])
-        df_1.loc[idel, 'mean_confidance_scores'] = np.mean(confidance_scores[from_id:to_id])
-        
-        wandb.log({f"Videos Confidance Scores": wandb.Table(dataframe=df_1)})
 
         
   
@@ -1421,22 +727,13 @@ def pl_refining(args, confidance_scores, total_clients):
 
         original_pl[from_id:to_id] = new_rep
 
-        # fig, axs = plt.subplots(2, 1) 
-        # axs[0].plot(probs)
-        # axs[0].set_title(f"Video {idel} Confidance Scores and Pseudo-Labels")
-        # axs[1].plot(new_rep)
-        # # axs[1].set_title(f"Video {idel} Pseudo-Labels", loc='right')
-        # wandb.log({f"Video {idel} Confidance Scores and Pseudo-Labels ":  wandb.Image(plt)})
-        # plt.close()
-
-    # save df_1 to csv
-    df_1.to_csv('C:/Users/User/PycharmProjects/FL_AD/confidance_scores_stats.csv', index=False)
+ 
     return np.array(original_pl), sum(iou_scores) / len(iou_scores)    
 
 
 
 from itertools import islice
-# dict(islice(abnormal_list.items(), 1, int(0.8*len(abnormal_list))))
+
 def gmm_PL(args, total_clients, gmm_params, vids_num):
 
     all_abnormal  = {}
@@ -1671,23 +968,6 @@ class Dataset_Con_all_feedback_XD(data.Dataset):
 
 
 DATASETS: Dict[str, Type[BaseDataset]] = {
-    "cifar10": CIFAR10,
-    "cifar100": CIFAR100,
-    "mnist": MNIST,
-    "emnist": EMNIST,
-    "fmnist": FashionMNIST,
-    "femnist": FEMNIST,
-    "medmnistS": MedMNIST,
-    "medmnistC": MedMNIST,
-    "medmnistA": MedMNIST,
-    "covid19": COVID19,
-    "celeba": CelebA,
-    "synthetic": Synthetic,
-    "svhn": SVHN,
-    "usps": USPS,
-    "tiny_imagenet": TinyImagenet,
-    "cinic10": CINIC10,
-    "domain": DomainNet,
     "ucf": Dataset_Con_all_feedback_XD,
     "XD": Dataset_Con_all_feedback_XD,
 }
