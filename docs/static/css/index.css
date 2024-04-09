@@ -167,7 +167,7 @@ body {
 }
 
 .image-wrapper img {
-  width: 80%; /* Adjust image size */
+  width: 50%; /* Adjust image size */
   max-width: 200px; /* Maximum width for images */
   height: auto; /* Maintain aspect ratio */
   display: block;
