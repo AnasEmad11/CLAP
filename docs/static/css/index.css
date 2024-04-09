@@ -156,38 +156,23 @@ body {
   border-radius: 5px;
 }
 
-
-.link-block {
-  display: inline-block;
-  margin: 0 10px;
+.image-section {
+  padding: 50px 0; /* Adjust as needed */
 }
 
-.icon-container {
-  position: relative;
-  display: inline-block;
+.image-wrapper {
+  text-align: center;
 }
 
-.icon-container img {
-  width: 100px; /* Adjust as needed */
+.image-wrapper img {
+  width: 100%; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
-.icon-container:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: black;
-  border-radius: 50%;
-  width: 120px; /* Adjust as needed */
-  height: 120px; /* Adjust as needed */
-  z-index: -1;
+.image-text {
+  display: block;
+  font-size: 16px; /* Adjust as needed */
+  margin-top: 10px; /* Adjust as needed */
 }
 
-.icon-text {
-  display: block;
-  font-size: 14px; /* Adjust as needed */
-  margin-top: 5px; /* Adjust as needed */
-}
 
