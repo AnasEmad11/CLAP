@@ -162,9 +162,27 @@ body {
   margin: 0 10px;
 }
 
-.link-block img {
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-container img {
   width: 100px; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
+}
+
+.icon-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 50%;
+  width: 120px; /* Adjust as needed */
+  height: 120px; /* Adjust as needed */
+  z-index: -1;
 }
 
 .icon-text {
@@ -172,3 +190,4 @@ body {
   font-size: 14px; /* Adjust as needed */
   margin-top: 5px; /* Adjust as needed */
 }
+
