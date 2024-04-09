@@ -176,3 +176,28 @@ body {
 }
 
 
+.link-block {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.icon-container {
+  position: relative;
+}
+
+.icon-container img {
+  width: 100px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.icon-text {
+  display: block;
+  font-size: 14px; /* Adjust as needed */
+  margin-top: 5px; /* Adjust as needed */
+  position: absolute;
+  bottom: -20px; /* Adjust as needed to position text */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
