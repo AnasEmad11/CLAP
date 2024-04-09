@@ -156,6 +156,7 @@ body {
   border-radius: 5px;
 }
 
+
 .image-section {
   padding: 50px 0; /* Adjust as needed */
 }
@@ -176,8 +177,11 @@ body {
 .image-text {
   display: block;
   font-size: 14px; /* Adjust as needed */
-  margin-top: 10px; /* Adjus
-
+  margin-top: 10px; /* Adjust as needed */
+  background-color: #f0f0f0; /* Background color for text */
+  padding: 10px; /* Padding for text */
+  border-radius: 10px; /* Add rounded corners */
+}
 
 
 
