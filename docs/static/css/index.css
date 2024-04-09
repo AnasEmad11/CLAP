@@ -165,39 +165,20 @@ body {
 }
 
 .image-wrapper img {
-  width: 100%; /* Adjust as needed */
+  width: 80%; /* Adjust image size */
+  max-width: 200px; /* Maximum width for images */
   height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* Add rounded corners */
 }
 
 .image-text {
   display: block;
-  font-size: 16px; /* Adjust as needed */
-  margin-top: 10px; /* Adjust as needed */
-}
-
-
-.link-block {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.icon-container {
-  position: relative;
-}
-
-.icon-container img {
-  width: 100px; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.icon-text {
-  display: block;
   font-size: 14px; /* Adjust as needed */
-  margin-top: 5px; /* Adjust as needed */
-  position: absolute;
-  bottom: -20px; /* Adjust as needed to position text */
-  left: 50%;
-  transform: translateX(-50%);
-}
+  margin-top: 10px; /* Adjus
+
+
+
 
 
