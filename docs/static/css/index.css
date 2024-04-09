@@ -157,6 +157,7 @@ body {
 }
 
 
+
 .image-section {
   padding: 50px 0; /* Adjust as needed */
 }
@@ -171,18 +172,20 @@ body {
   height: auto; /* Maintain aspect ratio */
   display: block;
   margin: 0 auto;
-  border-radius: 10px; /* Add rounded corners */
+  border-radius: 10px; /* Add rounded corners to images */
 }
 
-.image-text {
+.link-block_1 {
   display: block;
   font-size: 14px; /* Adjust as needed */
   margin-top: 10px; /* Adjust as needed */
-  background-color: #3d3c3c; /* Background color for text */
+  background-color: #000; /* Background color for text */
+  color: #fff; /* Text color */
   padding: 10px; /* Padding for text */
-  border-radius: 10px; /* Add rounded corners */
+  border-radius: 10px; /* Add rounded corners to text background */
 }
 
-
-
+.image-link {
+  text-decoration: none; /* Remove default hyperlink underline */
+}
 
