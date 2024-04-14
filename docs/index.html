@@ -265,170 +265,46 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-three-quarters">
-                    <h2 class="title is-3">Effect of Distibution Alignment</h2>
+                    <h2 class="title is-3">Effect of Distribution Alignment</h2>
                     <div class="content has-text-justified">
-                        <p>
-                            We evaluate our distribution aloignment strategy  <span class="method-name">PromptAlign</span> on domnain generalization
-                            settings and cross-dataset settings. For domain generalization, we evaluate on the ImageNet variants and also on the 
-                            recently released PUG dataset Imagenet variants. 
-                        </p>
+                        <p>We evaluate</p>
                     </div>
                 </div>
             </div>
         </div>
-        <p style="padding: 20px;" />
+        <p style="padding: 20px;"></p>
         <div class="is-centered has-text-centered">
             <div class="table-container is-max-desktop">
-                <table style="width:100%">
-                    <caption>
-                        Effect of token distribution alignment strategy for domain generalization.
-                    </caption>
-                    
-                    <small style="text-align:center; display:block;"> </small>
-                    
-                    <tr>
-                        <th></th>
-                        <th>FedAvg</th>
-                        <th>FedProx</th>
-                        <th>SCAFFOLD</th>
-
-                    </tr>
-                        <td colspan="6" style="border-bottom: 1px solid #ddd;"></td>
-                    <tr style="background-color:#e6e6e6">
-                        <td>CLAP</td>
-                        <td>73.99%</td>
-                        <td>73.4%</td>
-                        <td>73.7%</td>
-
-                    </tr>
+                <table style="width:100%; font-size: 18px;">
+                    <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 25%;">
+                        <col style="width: 25%;">
+                        <col style="width: 25%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>FedAvg</th>
+                            <th>FedProx</th>
+                            <th>SCAFFOLD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color:#e6e6e6">
+                            <td>CLAP</td>
+                            <td>73.99%</td>
+                            <td>73.4%</td>
+                            <td>73.7%</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
+    </section>
+    
         
-        <p style="padding: 20px;" />
-        <div class="is-centered has-text-centered">
-            <div class="table-container is-max-desktop">
-                <table style="width:100%">
-                    <caption">
-                        Comparison of PromptAlign in cross-dataset evaluation.
-                    </caption>
-                    <small style="text-align:center; display:block;"> </small>
-                    <tr>
-                        <th></th>
-                        <th>Caltech</th>
-                        <th>Pets</th>
-                        <th>Cars</th>
-                        <th>Flowers</th>
-                        <th>Food101</th>
-                        <th>Aircraft</th>
-                        <th>SUN397</th>
-                        <th>DTD</th>
-                        <th>EuroSAT</th>
-                        <th>UCF101</th>
-                        <th>Average</th>
-                    </tr>
-                        <td colspan="12" style="border-bottom: 1px solid #ddd;"></td>
-                    <tr>
-                        <td>CLIP </td>
-                        <td>93.35</td>
-                        <td>88.25</td>
-                        <td>65.48</td>
-                        <td>67.44</td>
-                        <td>83.65</td>
-                        <td>23.67</td>
-                        <td>62.59</td>
-                        <td>44.27</td>
-                        <td>42.01</td>
-                        <td>65.13</td>
-                        <td>63.58</td>
-                    </tr>
-                    <tr>
-                        <td>CLIP+TPT </td>
-                        <td><strong>94.16</strong></td>
-                        <td>87.79</td>
-                        <td>66.87</td>
-                        <td>68.98</td>
-                        <td>84.67</td>
-                        <td>24.78</td>
-                        <td>65.50</td>
-                        <td><strong>47.75</strong></td>
-                        <td>42.44</td>
-                        <td>68.04</td>
-                        <td>65.10</td>
-                    </tr>
-                    <tr>
-                        <td>CoOp </td>
-                        <td>93.70</td>
-                        <td>89.14</td>
-                        <td>64.51</td>
-                        <td>68.71</td>
-                        <td>85.30</td>
-                        <td>18.47</td>
-                        <td>64.15</td>
-                        <td>41.92</td>
-                        <td>46.39</td>
-                        <td>66.55</td>
-                        <td>63.88</td>
-                    </tr>
-                    <tr>
-                        <td>CoCoOp </td>
-                        <td>93.79</td>
-                        <td>90.46</td>
-                        <td>64.90</td>
-                        <td>70.85</td>
-                        <td>83.97</td>
-                        <td>22.29</td>
-                        <td>66.89</td>
-                        <td>45.45</td>
-                        <td>39.23</td>
-                        <td>68.44</td>
-                        <td>64.63</td>
-                    </tr>
-                    <tr>
-                        <td>MaPLe </td>
-                        <td>93.53</td>
-                        <td>90.49</td>
-                        <td>65.57</td>
-                        <td>72.23</td>
-                        <td>86.20</td>
-                        <td>24.74</td>
-                        <td>67.01</td>
-                        <td>46.49</td>
-                        <td style="font-weight: bold">48.06</td>
-                        <td>68.69</td>
-                        <td>66.30</td>
-                    </tr>
-                    <tr>
-                        <td>MaPLe+TPT </td>
-                        <td>93.59</td>
-                        <td>90.72</td>
-                        <td>66.50</td>
-                        <td>72.37</td>
-                        <td>86.64</td>
-                        <td>24.70</td>
-                        <td style="font-weight: bold">67.54</td>
-                        <td>45.87</td>
-                        <td>47.80</td>
-                        <td>69.19</td>
-                        <td>66.50</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color: #e6e6e6">PromptAlign </td>
-                        <td style="background-color: #e6e6e6">94.01</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">90.76</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">68.50</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">72.39</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">86.65</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">24.80</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">67.54</td>
-                        <td style="background-color: #e6e6e6">47.24</td>
-                        <td style="background-color: #e6e6e6">47.86</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">69.47</td>
-                        <td style="background-color: #e6e6e6; font-weight: bold">66.92</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+
         <!--/ Results. -->
     </section>
 
