@@ -178,11 +178,11 @@ body {
 .link-block_1 {
   display: block;
   font-size: 14px; /* Adjust as needed */
-  margin-top: 5px; /* Adjust as needed */
+  margin-top: 10px; /* Adjust as needed */
   background-color: #000; /* Background color for text */
   color: #fff; /* Text color */
-  padding: 5px; /* Padding for text */
-  border-radius: 10px; /* Add rounded corners to text background */
+  padding: 10px; /* Padding for text */
+  border-radius: 5px; /* Add rounded corners to text background */
 }
 
 .image-link {
