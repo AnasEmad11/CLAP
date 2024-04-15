@@ -220,7 +220,7 @@
               </h2>
               <p style="padding: 10px;"></p>
               <div id="method-overview-wrapper">
-                  <object type="image/svg+xml" data="./static/images/webpage_datasplit.drawio_(2).svg" class="method-overview-full-img method-overview" draggable="false" style="display: block; margin: 0 auto;  width: 50%; height: 50%;"></object>
+                  <object type="image/svg+xml" data="./static/images/webpage_datasplit_v2.svg" class="method-overview-full-img method-overview" draggable="false" style="display: block; margin: 0 auto;  width: 50%; height: 50%;"></object>
               </div>
               <p style="padding: 10px;"></p>
               <div class="method-overview-text has-text-justified">
@@ -267,7 +267,7 @@
                 <div class="column is-three-quarters">
                     <h2 class="title is-3">CLAP Results</h2>
                     <div class="content has-text-justified">
-                        <!-- <p>We evaluate</p> -->
+                        <p>We evaluate CLAP on 3 different FL methods on the scence-based split</p>
                     </div>
                 </div>
             </div>
@@ -277,10 +277,10 @@
             <div class="table-container is-max-desktop">
                 <table style="width:100%; font-size: 24px;">
                     <colgroup>
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
                     </colgroup>
                     <thead>
                         <tr>
@@ -301,6 +301,45 @@
                 </table>
             </div>
         </div>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+              <div class="column is-three-quarters">
+                  <h2 class="title is-3">CLAP Results</h2>
+                  <div class="content has-text-justified">
+                      <p>Comparison of CLAP with other SOTA Unsupervised and Weakly Supervised methods</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <p style="padding: 20px;"></p>
+      <div class="is-centered has-text-centered">
+          <div class="table-container is-max-desktop">
+              <table style="width:100%; font-size: 24px;">
+                  <colgroup>
+                      <col style="width: 20%;">
+                      <col style="width: 20%;">
+                      <col style="width: 20%;">
+                      <col style="width: 20%;">
+                  </colgroup>
+                  <thead>
+                      <tr>
+                          <th></th>
+                          <th>FedAvg</th>
+                          <th>FedProx</th>
+                          <th>SCAFFOLD</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr style="background-color:#e6e6e6">
+                          <td>CLAP</td>
+                          <td>73.99%</td>
+                          <td>73.4%</td>
+                          <td>73.7%</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
     </section>
     
         
