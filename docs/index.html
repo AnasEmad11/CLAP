@@ -266,7 +266,7 @@
             <div class="columns is-centered has-text-centered">
                 <div class="column is-three-quarters">
                     <h2 class="title is-3">CLAP Results</h2>
-                    <div class="content" style="text-align: justify; font-size: 24px;">
+                    <div class="content has-text-justified">
                         <p>We evaluate CLAP on 3 different FL methods on the scence-based split</p>
                     </div>
                 </div>
@@ -305,35 +305,47 @@
           <div class="columns is-centered has-text-centered">
               <div class="column is-three-quarters">
                   
-                <div class="content" style="text-align: justify; font-size: 24px;"> 
+                <div class="content has-text-justified"> 
                       <p>Comparison of CLAP with other SOTA Unsupervised and Weakly Supervised methods</p>
                   </div>
               </div>
           </div>
       </div>
-      <p style="padding: 20px;"></p>
+      <p style="padding: 30px;"></p>
       <div class="is-centered has-text-centered">
           <div class="table-container is-max-desktop">
               <table style="width:100%; font-size: 24px;">
                   <colgroup>
-                      <col style="width: 15%;">
-                      <col style="width: 15%;">
-                      <col style="width: 15%;">
-                      <col style="width: 15%;">
+                      <col style="width: 20%;">
+                      <col style="width: 20%;">
+                      <col style="width: 20%;">
+                      <col style="width: 20%;">
                   </colgroup>
                   <thead>
                       <tr>
                           <th></th>
-                          <th>FedAvg</th>
-                          <th>FedProx</th>
-                          <th>SCAFFOLD</th>
+                          <th colspan="2">UCF-Crime</th>
+                          <th colspan="2">XD-Violence</th>
+                          <!-- <th>SCAFFOLD</th> -->
                       </tr>
                   </thead>
+                  <thead>
+                    <tr>
+                        <th></th>
+                        <!-- <th colspan="2">UCF-Crime</th>
+                        <th colspan="2">XD-Violence</th> -->
+                        <th>US</th>
+                        <th>WS</th>
+                        <th>US</th>
+                        <th>WS</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                      <tr style="background-color:#e6e6e6">
+                      <tr>
                           <td>CLAP</td>
                           <td>73.99%</td>
                           <td>73.4%</td>
+                          <td>73.7%</td>
                           <td>73.7%</td>
                       </tr>
                   </tbody>
