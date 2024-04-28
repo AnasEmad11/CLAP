@@ -480,8 +480,8 @@ class FedAvgClient:
                 # print(pred.shape)
 
 
-            # gt = np.load("C:/Users/User/PycharmProjects/FL_AD/gt.npy")[:2329200] #XD
-            gt = np.load("gt-ucf-RTFM.npy") # TODO add the path of gt 
+            
+            gt = np.load("labels/gt-ucf-RTFM.npy") # TODO add the path of gt 
             pred = list(pred.cpu().detach().numpy())
             pred = np.repeat(np.array(pred), 16)
             gt = gt[:len(pred)] 
