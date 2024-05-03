@@ -4,3 +4,8 @@ data/cifar10
 data/femnist
 data/leaf_utils
 data/download
+FL_AD/
+FL_AD_CLAP.zip
+wandb/
+data/ucf/clusters
+data/XD/clusters
