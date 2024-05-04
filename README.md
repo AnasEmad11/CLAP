@@ -13,29 +13,6 @@ Official implementation of the paper: "Collaborative Learning of Anomalies with 
 ![abstract figure](imgs/github_cvpr_mainfig.drawio.png)
 > **<p align="justify"> Abstract:** Unsupervised (US) video anomaly detection (VAD) in surveillance applications is gaining more popularity recently due to its practical real-world applications. As surveillance videos are privacy sensitive and the availability of large-scale video data may enable better US-VAD systems, collaborative learning can be highly rewarding in this setting. However, due to the extremely challenging nature of the US-VAD task, where learning is carried out without any annotations, privacy-preserving collaborative learning of US-VAD systems has not been studied yet. In this paper, we propose a new baseline for anomaly detection capable of localizing anomalous events in complex surveillance videos in a fully unsupervised fashion without any labels on a privacy-preserving participant-based distributed training configuration. Additionally, we propose three new evaluation protocols to benchmark anomaly detection approaches on various scenarios of collaborations and data availability. Based on these protocols, we modify existing VAD datasets to extensively evaluate our approach as well as existing US SOTA methods on two large-scale datasets including UCF-Crime and XD-Violence.
 
-## Examples of dataset splits
-
-<div style="display: flex; justify-content: space-around;">
-
-<div style=" border-radius: 10px; background-color: rgb(245,245,245); margin-right: 20px; text-align: center;">
-    <img src="docs/static/images/webpage_randomsplit_v1.svg" width="350" height="350" alt="Random Dataset Split SVG">
-    <p><b>Example of Random Dataset Split</b></p>
-</div>
-
-<div style="border-radius: 10px; background-color: rgb(245,245,245); margin-right: 20px; text-align: center;">
-    <img src="docs/static/images/webpage_eventsplit_v1.svg" width="350" height="350" alt="Event Dataset Split SVG">
-    <p><b>Example of Event Dataset Split</b></p>
-</div>
-
-<div style="border-radius: 10px; background-color: rgb(245,245,245); margin-right: 20px; text-align: center;">
-    <img src="docs/static/images/webpage_datasplit_scene_v1.svg" width="350" height="350" alt="Scene Dataset Split SVG">
-    <p><b>Example of Scene Dataset Split</b></p>
-</div>
-
-</div>
-
-
-
 
 ## Requirements 
 Follow these steps to set up a conda environment and ensure all necessary packages are installed:
@@ -54,9 +31,6 @@ pip install -r requirements.txt
 ```
 
 
-### Setup
-
-
 ### Dataset
 
 To setup all the available datasets, plesae download the concatenated features from this [link](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/anas_al-lahham_mbzuai_ac_ae/Ek7OQNDf9tBLqk7AfH4CPAgBP9cvtjCZnIWbrfwGogXlsA?e=TwuRwr)
@@ -68,10 +42,6 @@ All the required dataset splits are availble in the project webpage and can be d
     <img src="docs/static/images/data_dist.png"  alt=" Dataset  dist">
     <p><b>Distribution of UCF-Crime dataset videos based on the three training data organizations proposed in our paper to evaluate collaborative learning approaches for video Anomaly Detection.</b></p>
 </div>
-
-
-
-
 
 
 
