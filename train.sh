@@ -6,9 +6,9 @@ python ./src/server/fedavg.py \
     -bs 128 \
     --global_epoch 15 \
     --local_epoch 1 \
-    --partition ratio_partition_10_V3.pkl \ # partition file
-    --partition_chain ratio_partition_chain_10_V3.pkl \ # partition chain file
-    --video_num_partition ratio_video_num_partition_10_V3.pkl \ # video num partition file
+    --partition ratio_partition_10_V3.pkl \
+    --partition_chain ratio_partition_chain_10_V3.pkl \
+    --video_num_partition ratio_video_num_partition_10_V3.pkl \
     --test_gap 1 \
     --join_ratio 1 \
     --gmm_pl 0 \
