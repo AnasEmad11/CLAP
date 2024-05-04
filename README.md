@@ -25,7 +25,7 @@ All the required datasets and evaluation scenarios will released soon!
 
 
 
-## Citation
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
