@@ -9,7 +9,7 @@ from argparse import ArgumentParser, Namespace
 from collections import OrderedDict
 from copy import deepcopy
 from typing import Dict, List
-import wandb
+# import wandb
 from collections import OrderedDict
 import torch
 from rich.console import Console
@@ -142,7 +142,7 @@ class FedAvgServer:
         self.model = MODEL_DICT[self.args.model](self.args.dataset).to(self.device) 
         # self.model.check_avaliability()
         
-        wandb.init(project="AD_FL",config=self.args,tags=["baseline", self.args.train_mode, "Client_C2FPL", "Visualize", "Refining"], name=f"{self.args.dataset}_{self.args.model}_{self.args.train_mode}")
+        # wandb.init(project="AD_FL",config=self.args,tags=["baseline", self.args.train_mode, "Client_C2FPL", "Visualize", "Refining"], name=f"{self.args.dataset}_{self.args.model}_{self.args.train_mode}")
 
 
         # client_trainable_params is for pFL, which outputs exclusive model per client
@@ -303,7 +303,7 @@ class FedAvgServer:
             weight_cache.append(weight)
 
             print(self.client_stats[client_id][self.current_epoch])
-            wandb.log({f"client status for Client {client_id}":self.client_stats[client_id][self.current_epoch]})
+            # wandb.log({f"client status for Client {client_id}":self.client_stats[client_id][self.current_epoch]})
         
         # updates_ordered = OrderedDict(sorted(updates.items()))
         # pl_refine = [pls for pls in updates_ordered.values()]
@@ -380,7 +380,7 @@ class FedAvgServer:
                 torch.max(AUC_after),
             ),
         }
-        wandb.log({"AUC Before Max":torch.max(AUC_before),"AUC After Max":torch.max(AUC_after), "AUC Before Average":torch.mean(AUC_before)})
+        # wandb.log({"AUC Before Max":torch.max(AUC_before),"AUC After Max":torch.max(AUC_after), "AUC Before Average":torch.mean(AUC_before)})
         print(self.test_results[self.current_epoch + 1])
         self.test_flag = False
 
@@ -619,7 +619,7 @@ class FedAvgServer:
 
 
 if __name__ == "__main__":
-    wandb.login()
+    # wandb.login()
     
     server = FedAvgServer()
     

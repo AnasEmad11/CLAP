@@ -6,7 +6,7 @@ import pickle
 from argparse import Namespace
 from pathlib import Path
 from typing import List, Type, Dict
-import wandb
+# import wandb
 import torch
 import numpy as np
 import torchvision
@@ -707,24 +707,24 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
             # break
         # print(f"Client {client_id} has {n_num} normal videon and {a_num} abnormal videos \n Total number of videos of {n_num + a_num}")
 
-        params = []
-        top_k = 30
-        for i in range(len(new_repr)):
-            entropy = 0
+        # params = []
+        # top_k = 30
+        # for i in range(len(new_repr)): # entropy and var diff
+        #     entropy = 0
 
-            param_1 = get_matrix(new_repr[i]) # l2 norm
-            mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
+        #     param_1 = get_matrix(new_repr[i]) # l2 norm
+        #     mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
 
-            l2_diff = np.diff(param_1, n=1) # max diff
-            var_diff = np.var(l2_diff) # variance of max diff
-            max_diff = np.max(np.diff(param_1, n=1))
-            param_2 = covariance_mat(new_repr[i])
-            param_2 = np.where(param_2 == 0, 0.000000001,param_2)
-            for i in np.diagonal(param_2):
-                entropy += -(i * np.log(i))
+        #     l2_diff = np.diff(param_1, n=1) # max diff
+        #     var_diff = np.var(l2_diff) # variance of max diff
+        #     max_diff = np.max(np.diff(param_1, n=1))
+        #     param_2 = covariance_mat(new_repr[i])
+        #     param_2 = np.where(param_2 == 0, 0.000000001,param_2)
+        #     for i in np.diagonal(param_2):
+        #         entropy += -(i * np.log(i))
 
 
-            params.append((max_diff,  entropy))
+        #     params.append((max_diff,  entropy))
 
 
         # params = []
@@ -759,15 +759,15 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
         #     params.append(np.diagonal(param_2[:top_k, :top_k]))
 
 
-        # params = []
+        params = []
 
-        # for i in range(len(new_repr)):
+        for i in range(len(new_repr)):
 
-        #     param = get_matrix(new_repr[i])
-        #     mu, var = estimate_gauss(param)
+            param = get_matrix(new_repr[i])
+            mu, var = estimate_gauss(param)
 
 
-        #     params.append((mu,var,))
+            params.append((mu,var,))
 
 
 
@@ -918,7 +918,7 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
     # print(df)
 
-    wandb.log({f"Client {client_id} Clustering ACC": wandb.Table(dataframe=df)})
+    # wandb.log({f"Client {client_id} Clustering ACC": wandb.Table(dataframe=df)})
 
 
 
@@ -1332,7 +1332,6 @@ PROJECT_DIR = Path(__file__).parent.parent.parent.absolute()
 
 
 
-
 def pl_refining(args, confidance_scores, total_clients):
     df_1 = pd.DataFrame(columns=['Class','max_confidance_score', 'mean_confidance_scores'])
     try:
@@ -1384,7 +1383,7 @@ def pl_refining(args, confidance_scores, total_clients):
         df_1.loc[idel, 'max_confidance_score'] = np.max(confidance_scores[from_id:to_id])
         df_1.loc[idel, 'mean_confidance_scores'] = np.mean(confidance_scores[from_id:to_id])
         
-        wandb.log({f"Videos Confidance Scores": wandb.Table(dataframe=df_1)})
+        # wandb.log({f"Videos Confidance Scores": wandb.Table(dataframe=df_1)})
 
         
   
@@ -1436,7 +1435,7 @@ def pl_refining(args, confidance_scores, total_clients):
 
 
 from itertools import islice
-# dict(islice(abnormal_list.items(), 1, int(0.8*len(abnormal_list))))
+
 def gmm_PL(args, total_clients, gmm_params, vids_num):
 
     all_abnormal  = {}
@@ -1560,7 +1559,7 @@ class Dataset_Con_all_feedback_XD(data.Dataset):
             raise FileNotFoundError(f"Please partition {args.dataset} first.")
 
         if args.dataset == 'ucf':
-            self.no_of_vids = 1317 #1608 
+            self.no_of_vids = 1608 #1608 
         else:
             self.no_of_vids = 3954
 
@@ -1574,7 +1573,7 @@ class Dataset_Con_all_feedback_XD(data.Dataset):
             
             
             if args.dataset == 'ucf':
-                self.con_all = np.load('data/datasets/concat_UCF_V2.npy')[85902:]
+                self.con_all = np.load('data/datasets/concat_UCF_V2.npy')
             if args.dataset == 'XD':
                 self.con_all = np.load("data/datasets/concat_XD.npy")    
             print('self.con_all shape:',self.con_all.shape)
