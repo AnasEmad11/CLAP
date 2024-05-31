@@ -279,8 +279,7 @@ class FedAvgClient:
             for (name, p0), p1 in zip(
                 new_parameters.items(), trainable_params(self.model)
             ):
-                delta[name] = p0 - p1 #if fedprox
-                # delta[name] = self.args.mu * (p0 - p1)
+                delta[name] = p0 - p1 
 
             return delta, len(self.trainset), eval_stats, update
         else:
@@ -292,12 +291,7 @@ class FedAvgClient:
 
 
 
-    def get_matrix(self,data):
 
-        l2_norm = np.sum(np.square(data), axis=2)
-        n_train_crop_l2_norm_mean = np.mean(l2_norm, axis= 1)
-
-        return n_train_crop_l2_norm_mean
 
 
 
@@ -377,25 +371,25 @@ class FedAvgClient:
                 self.optimizer.step()
 
     def fit_ucf(self, Refine = False):
-        cluster_path = PROJECT_DIR / "data" / self.args.dataset / "clusters" / "gmm_params.pkl"
-        with open(cluster_path, "rb") as f:
-                gmm_params = pickle.load(f)    
-        from scipy.stats import multivariate_normal
-        def sum_multivariate_normals(x):
-            total_sample_length = 0
-            for _, _, client_sample_length, _  in gmm_params.values():
-                total_sample_length += client_sample_length
-            total_coff = 0
-            final_probs = 0
-            for i in range(len(gmm_params)):
-                mu_GMM, var_GMM ,  client_sample_length, _ = gmm_params[i]
-                p_client = multivariate_normal(mu_GMM, var_GMM)
-                probs = p_client.pdf(x)
-                coff = client_sample_length / total_sample_length
-                total_coff += coff
+        # cluster_path = PROJECT_DIR / "data" / self.args.dataset / "clusters" / "gmm_params.pkl"
+        # with open(cluster_path, "rb") as f:
+        #         gmm_params = pickle.load(f)    
+        # from scipy.stats import multivariate_normal
+        # def sum_multivariate_normals(x):
+        #     total_sample_length = 0
+        #     for _, _, client_sample_length, _  in gmm_params.values():
+        #         total_sample_length += client_sample_length
+        #     total_coff = 0
+        #     final_probs = 0
+        #     for i in range(len(gmm_params)):
+        #         mu_GMM, var_GMM ,  client_sample_length, _ = gmm_params[i]
+        #         p_client = multivariate_normal(mu_GMM, var_GMM)
+        #         probs = p_client.pdf(x)
+        #         coff = client_sample_length / total_sample_length
+        #         total_coff += coff
 
-                final_probs += probs * coff
-            return final_probs
+        #         final_probs += probs * coff
+        #     return final_probs
         # print("total_coff", total_coff)
             
         with torch.set_grad_enabled(True):
@@ -434,16 +428,11 @@ class FedAvgClient:
                     loss = loss_fn(scores, labels)
                     losses.append(loss.cpu().detach().numpy())
                     self.optimizer.zero_grad()
-                    # proximal_term = 0.0 
-                    # # torch.norm(trainable_params(self.model) - global_params, 2) ** 2
-                    # for w, w_t in zip(trainable_params(self.model, detach=True), global_params): 
-                    #     proximal_term += (w - w_t).norm(2)  
+
 
 
                     loss.backward()
-                    for w, w_t in zip(self.model.parameters(), global_params):
-                        if w.grad is not None:
-                            w.grad.data += 0.25 * (w.data - w_t.data)                   
+                 
                     self.optimizer.step()
 
         # wandb.log({"Train Loss":np.mean(losses)}) 
@@ -481,7 +470,7 @@ class FedAvgClient:
 
 
             # gt = np.load("C:/Users/User/PycharmProjects/FL_AD/gt.npy")[:2329200] #XD
-            gt = np.load("labels/gt-ucf-RTFM.npy") # TODO add the path of gt 
+            gt = np.load("labels/gt-ucf-RTFM.npy")  
             pred = list(pred.cpu().detach().numpy())
             pred = np.repeat(np.array(pred), 16)
             gt = gt[:len(pred)] 

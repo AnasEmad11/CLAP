@@ -693,61 +693,40 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
     new_repr = []
     n_num = 0
     a_num = 0
-    # for i  in range(len(client_partition['train'])):
-    #     if client_video_num_partition['train'][i] > 809: 
-    #         n_num += 1
-    #     else:
-    #         a_num += 1
-    #     new_repr.append(train_data[client_partition['train'][i]])
-
     for i  in range(len(client_partition['train'])):
+        if client_video_num_partition['train'][i] > 809: 
+            n_num += 1
+        else:
+            a_num += 1
         new_repr.append(train_data[client_partition['train'][i]])
-    if load == 0:
 
+    # for i  in range(len(client_partition['train'])):
+    #     new_repr.append(train_data[client_partition['train'][i]])
+    if load == 0:
+        print("Creating Clusters for Client ", client_id)
             # break
         # print(f"Client {client_id} has {n_num} normal videon and {a_num} abnormal videos \n Total number of videos of {n_num + a_num}")
 
-        # params = []
-        # top_k = 30
-        # for i in range(len(new_repr)): # entropy and var diff
-        #     entropy = 0
+        params = []
+        top_k = 30
+        for i in range(len(new_repr)): # entropy and var diff
+            entropy = 0
 
-        #     param_1 = get_matrix(new_repr[i]) # l2 norm
-        #     mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
+            param_1 = get_matrix(new_repr[i]) # l2 norm
+            mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
 
-        #     l2_diff = np.diff(param_1, n=1) # max diff
-        #     var_diff = np.var(l2_diff) # variance of max diff
-        #     max_diff = np.max(np.diff(param_1, n=1))
-        #     param_2 = covariance_mat(new_repr[i])
-        #     param_2 = np.where(param_2 == 0, 0.000000001,param_2)
-        #     for i in np.diagonal(param_2):
-        #         entropy += -(i * np.log(i))
-
-
-        #     params.append((max_diff,  entropy))
+            l2_diff = np.diff(param_1, n=1) # max diff
+            var_diff = np.var(l2_diff) # variance of max diff
+            max_diff = np.max(np.diff(param_1, n=1))
+            param_2 = covariance_mat(new_repr[i])
+            param_2 = np.where(param_2 == 0, 0.000000001,param_2)
+            for i in np.diagonal(param_2):
+                entropy += -(i * np.log(i))
 
 
-        # params = []
-        # top_k = 15
-        # for i in range(len(new_repr)):
-        #     entropy = 0
-
-        #     param_1 = get_matrix(new_repr[i]) # l2 norm
-        #     mu, var = estimate_gauss(param_1) # mean and variance of l2 norm
-
-        #     l2_diff = np.diff(param_1, n=1) # max diff
-        #     var_diff = np.var(l2_diff) # variance of max diff
-
-        #     param_2 = covariance_mat(new_repr[i]) # covariance matrix
-        #     cov_var_sum = np.sum(np.diag(param_2))  # sum of diagonal elements
-        #     param_2 = np.where(param_2 == 0, 0.000000001,param_2)
-        #     # param_2 = param_2[~np.isnan(param_2)]
-        #     s= np.linalg.eigvals(param_2) # singular values
-        #     for i in s[:top_k]:
-        #         entropy += (i * np.log(i))  # entropy of covariance matrix
+            params.append((max_diff,  entropy))
 
 
-        #     params.append((var_diff, entropy))
 
         # params = []
         # top_k = 30
@@ -758,23 +737,20 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
         #     params.append(np.diagonal(param_2[:top_k, :top_k]))
 
+        # params = []
 
-        params = []
+        # for i in range(len(new_repr)):
 
-        for i in range(len(new_repr)):
-
-            param = get_matrix(new_repr[i])
-            mu, var = estimate_gauss(param)
+        #     param = get_matrix(new_repr[i])
+        #     mu, var = estimate_gauss(param)
 
 
-            params.append((mu,var,))
-
+        #     params.append((mu,var,))
 
 
 
-        # from sklearn.decomposition import PCA
-        # pca = PCA(n_components=2)
-        # sample = pca.fit(params).transform(params)
+
+
 
 
 
@@ -789,9 +765,7 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
         import matplotlib.pyplot as plt
 
-        # plt.scatter(sample[:, 0], sample[:, 1], c= labels)
-        # plt.title(f"Client {client_id} Clusters")
-        # wandb.log({f"Client {client_id} Clusters":  wandb.Image(plt)})
+
 
 
         import pandas as pd
@@ -855,6 +829,7 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
 
 
+
     else:
         print("Loading Clusters")
         #   all_abnormal  = {}
@@ -882,23 +857,23 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
 
 
-    # n = 0
-    # a = 0
-    # for i in range(len(new_repr)):
+    n = 0
+    a = 0
+    for i in range(len(new_repr)):
         
-    #     if client_video_num_partition['train'][i] in normal_set.keys():
-    #         if client_video_num_partition['train'][i] > 809:
-    #             # plt.scatter(params[i][0], params[i][1], c= "blue", marker="o")
-    #             n += 1
+        if client_video_num_partition['train'][i] in normal_set.keys():
+            if client_video_num_partition['train'][i] > 809:
+                # plt.scatter(params[i][0], params[i][1], c= "blue", marker="o")
+                n += 1
 
-    #         # else:
-    #         #     # plt.scatter(params[i][0], params[i][1], c= "red", marker="o") 
-    #     else:
-    #         if client_video_num_partition['train'][i] <= 809:
-    #             # plt.scatter(params[i][0], params[i][1], c= "blue", marker="x")
-    #             a += 1
             # else:
-            #     # plt.scatter(params[i][0], params[i][1], c= "red", marker="x") 
+            #     # plt.scatter(params[i][0], params[i][1], c= "red", marker="o") 
+        else:
+            if client_video_num_partition['train'][i] <= 809:
+                # plt.scatter(params[i][0], params[i][1], c= "blue", marker="x")
+                a += 1
+            # else:
+                # plt.scatter(params[i][0], params[i][1], c= "red", marker="x") 
             
     # plt.title(f"Client {client_id} Clusters")
     # wandb.log({f"Client {client_id} Clusters":  wandb.Image(plt)})
@@ -906,17 +881,17 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
 
 
 
-    # df.loc[client_id, 'num_of_GT_normal'] = n_num
-    # df.loc[client_id , 'num_of_GT_abnormal'] = a_num
-    # df.loc[client_id, 'num_of_P_normal'] = len(normal_set.keys()) 
-    # df.loc[client_id , 'num_of_P_abnormal'] = len(abnormal_set.keys())  
-    # df.loc[client_id , 'Total_vids'] = n_num  + a_num
-    # df.loc[client_id, 'correct_normal'] = n
-    # df.loc[client_id , 'correct_abnormal'] = a 
-    # df.loc[client_id, 'normal_acc %'] = n/len(normal_set.keys()) 
-    # df.loc[client_id, 'abnormal_acc %'] = a/len(abnormal_set.keys()) 
+    df.loc[client_id, 'num_of_GT_normal'] = n_num
+    df.loc[client_id , 'num_of_GT_abnormal'] = a_num
+    df.loc[client_id, 'num_of_P_normal'] = len(normal_set.keys()) 
+    df.loc[client_id , 'num_of_P_abnormal'] = len(abnormal_set.keys())  
+    df.loc[client_id , 'Total_vids'] = n_num  + a_num
+    df.loc[client_id, 'correct_normal'] = n
+    df.loc[client_id , 'correct_abnormal'] = a 
+    df.loc[client_id, 'normal_acc %'] = n/len(normal_set.keys()) 
+    df.loc[client_id, 'abnormal_acc %'] = a/len(abnormal_set.keys()) 
 
-    # print(df)
+    print(df)
 
     # wandb.log({f"Client {client_id} Clustering ACC": wandb.Table(dataframe=df)})
 
@@ -990,34 +965,34 @@ def C2FPL_client_eta(train_data,args, client_partition,client_video_num_partitio
     if load == 0:
 
 
-        # params = []
-        # top_k = 30
-        # for i in range(len(new_repr)):
-        #     entropy = 0
-
-        #     param_1 = get_matrix(new_repr[i])
-        #     mu, var = estimate_gauss(param_1)
-        #     max_diff = np.max(np.diff(param_1, n=1))
-        #     param_2 = covariance_mat(new_repr[i])
-        #     param_2 = np.where(param_2 == 0, 0.000000001,param_2)
-        #     for i in np.diagonal(param_2):
-        #         entropy += -(i * np.log(i))
-
-
-        #     params.append((max_diff,  entropy))
-
-
-
-
         params = []
-
+        top_k = 30
         for i in range(len(new_repr)):
+            entropy = 0
 
-            param = get_matrix(new_repr[i])
-            mu, var = estimate_gauss(param)
+            param_1 = get_matrix(new_repr[i])
+            mu, var = estimate_gauss(param_1)
+            max_diff = np.max(np.diff(param_1, n=1))
+            param_2 = covariance_mat(new_repr[i])
+            param_2 = np.where(param_2 == 0, 0.000000001,param_2)
+            for i in np.diagonal(param_2):
+                entropy += -(i * np.log(i))
 
 
-            params.append((mu,var,))
+            params.append((max_diff,  entropy))
+
+
+
+
+        # params = []
+
+        # for i in range(len(new_repr)):
+
+        #     param = get_matrix(new_repr[i])
+        #     mu, var = estimate_gauss(param)
+
+
+        #     params.append((mu,var,))
 
 
 
