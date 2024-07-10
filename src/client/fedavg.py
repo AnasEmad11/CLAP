@@ -272,7 +272,7 @@ class FedAvgClient:
         self.local_epoch = local_epoch
         self.load_dataset()
         self.set_parameters(new_parameters)
-        eval_stats, update  = self.train_and_log_ucf(Refine )  
+        eval_stats, update  = self.train_and_log_ucf(Refine)  
         
         if return_diff:
             delta = OrderedDict()
@@ -435,7 +435,7 @@ class FedAvgClient:
                  
                     self.optimizer.step()
 
-        # wandb.log({"Train Loss":np.mean(losses)}) 
+        wandb.log({"Train Loss":np.mean(losses)}) 
 
         return self.scores
 
@@ -485,7 +485,7 @@ class FedAvgClient:
 
             pr_auc = auc(recall, precision)
 
-            # wandb.log({"AUC": rec_auc, "AP": pr_auc})
+            wandb.log({"AUC": rec_auc, "AP": pr_auc})
             
             return {"test_AUC":rec_auc}
     def evaluate(self, model: torch.nn.Module = None) -> Dict[str, float]:
@@ -612,6 +612,6 @@ class FedAvgClient:
         if self.args.finetune_epoch > 0:
             self.finetune()
             after = self.evaluate_ucf()
-        # wandb.log({"before": before, "after": after})
+        wandb.log({"before": before, "after": after})
         return {"before": before, "after": after}
 

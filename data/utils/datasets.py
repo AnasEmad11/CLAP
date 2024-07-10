@@ -808,13 +808,13 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
         for (idel, sample) in abnormal_set.items():
             abnormal_l2[idel] = get_matrix(sample)
 
-        abnormal_set_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_abnormal.pkl"
+        abnormal_set_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_abnormal.pkl"
         with open(abnormal_set_path, "wb") as f: 
             pickle.dump(abnormal_set, f)
-        abnormal_l2_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_abnormal_l2.pkl"
+        abnormal_l2_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_abnormal_l2.pkl"
         with open(abnormal_l2_path, "wb") as f:
             pickle.dump(abnormal_l2, f)
-        normal_l2_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_normal_l2.pkl"
+        normal_l2_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_normal_l2.pkl"
         with open(normal_l2_path, "wb") as f:
             pickle.dump(normal_l2, f)
 
@@ -834,7 +834,7 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
         print("Loading Clusters")
         #   all_abnormal  = {}
 
-        cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_abnormal.pkl"
+        cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_abnormal.pkl"
         with open(cluster_path, "rb") as f:
                 abnormal_set = pickle.load(f)    
             # all_abnormal.update(abnormal_list)
@@ -842,7 +842,7 @@ def C2FPL_client(train_data,args,  client_partition,client_video_num_partition, 
         # all_normal  = {}
         
 
-        cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_normal_l2.pkl"
+        cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_normal_l2.pkl"
         with open(cluster_path, "rb") as f:
                 normal_set = pickle.load(f)   
         # all_normal.update(normal_list)  
@@ -1416,9 +1416,9 @@ def gmm_PL(args, total_clients, gmm_params, vids_num):
     all_abnormal  = {}
     for client_id in range(total_clients):
         if args.eta_clustering:
-            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"eta_{client_id}_of_{total_clients}_abnormal_l2.pkl"
+            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_eta_{client_id}_of_{total_clients}_abnormal_l2.pkl"
         else:
-            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_abnormal_l2.pkl"
+            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_abnormal_l2.pkl"
         with open(cluster_path, "rb") as f:
                 abnormal_list = pickle.load(f)    
         all_abnormal.update(abnormal_list)
@@ -1427,9 +1427,9 @@ def gmm_PL(args, total_clients, gmm_params, vids_num):
     
     for client_id in range(total_clients):
         if args.eta_clustering:
-            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"eta_{client_id}_of_{total_clients}_normal_l2.pkl"
+            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_eta_{client_id}_of_{total_clients}_normal_l2.pkl"
         else:
-            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{client_id}_of_{total_clients}_normal_l2.pkl"
+            cluster_path = PROJECT_DIR / "data" / args.dataset / "clusters" / f"{args.datasplit}_split_{client_id}_of_{total_clients}_normal_l2.pkl"
         with open(cluster_path, "rb") as f:
                 normal_list = pickle.load(f)   
         all_normal.update(normal_list)

@@ -9,7 +9,7 @@ from argparse import ArgumentParser, Namespace
 from collections import OrderedDict
 from copy import deepcopy
 from typing import Dict, List
-# import wandb
+import wandb
 from collections import OrderedDict
 import torch
 from rich.console import Console
@@ -68,7 +68,7 @@ def get_fedavg_argparser() -> ArgumentParser:
         ],
         default="cifar10",
     )
-    parser.add_argument("--seed", type=int, default=30)
+    parser.add_argument("--seed", type=int, default=66)
     parser.add_argument("--mu", type=float, default=1.0)
     parser.add_argument("-jr", "--join_ratio", type=float, default=0.1)
     parser.add_argument("-ge", "--global_epoch", type=int, default=100)
@@ -101,6 +101,7 @@ def get_fedavg_argparser() -> ArgumentParser:
     parser.add_argument("--load", type=int, default=1)
     parser.add_argument("--refine", type=int, default=0)
     parser.add_argument("--ws_percentage", type=int, default=1)
+    parser.add_argument("--datasplit", type=str, default="scene")
     
     return parser
 
@@ -142,7 +143,7 @@ class FedAvgServer:
         self.model = MODEL_DICT[self.args.model](self.args.dataset).to(self.device) 
         # self.model.check_avaliability()
         
-        # wandb.init(project="AD_FL",config=self.args,tags=["baseline", self.args.train_mode, "Client_C2FPL", "Visualize", "Refining"], name=f"{self.args.dataset}_{self.args.model}_{self.args.train_mode}")
+        wandb.init(project="AD_FL",config=self.args,tags=["baseline", self.args.train_mode, "Client_C2FPL", "Visualize", "Refining"], name=f"{self.args.dataset}_{self.args.model}_{self.args.train_mode}")
 
 
         # client_trainable_params is for pFL, which outputs exclusive model per client
@@ -265,6 +266,10 @@ class FedAvgServer:
             # if  E >= 4:
             #     r = True
             #     print("PL Refining.....")
+
+            # if E == self.train_progress_bar - 1:
+            #     fair = True
+
             self.train_one_round(r, E)
             self.scheduler.step()
             
@@ -301,12 +306,12 @@ class FedAvgServer:
                 updates[k] = update[k]
             delta_cache.append(delta)
             weight_cache.append(weight)
-
+            
             print(self.client_stats[client_id][self.current_epoch])
-            # wandb.log({f"client status for Client {client_id}":self.client_stats[client_id][self.current_epoch]})
+            wandb.log({f"client status for Client {client_id + 1 }":self.client_stats[client_id][self.current_epoch]})
         
-        # updates_ordered = OrderedDict(sorted(updates.items()))
-        # pl_refine = [pls for pls in updates_ordered.values()]
+        updates_ordered = OrderedDict(sorted(updates.items()))
+        pl_refine = [pls for pls in updates_ordered.values()]
         
         # label_all_refined = np.array(pl_refine)
         # if (E + 1) >= 4:   
@@ -380,7 +385,7 @@ class FedAvgServer:
                 torch.max(AUC_after),
             ),
         }
-        # wandb.log({"AUC Before Max":torch.max(AUC_before),"AUC After Max":torch.max(AUC_after), "AUC Before Average":torch.mean(AUC_before)})
+        wandb.log({"AUC Before Max":torch.max(AUC_before),"AUC After Max":torch.max(AUC_after), "AUC Before Average":torch.mean(AUC_before)})
         print(self.test_results[self.current_epoch + 1])
         self.test_flag = False
 
@@ -619,7 +624,7 @@ class FedAvgServer:
 
 
 if __name__ == "__main__":
-    # wandb.login()
+    wandb.login()
     
     server = FedAvgServer()
     
