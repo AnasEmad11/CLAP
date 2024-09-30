@@ -74,11 +74,13 @@ Comparison of CLAP with other SOTA Unsupervised and Weakly Supervised methods
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{al2024collaborative,
+    <pre><code>@inproceedings{al2024collaborative,
   title={Collaborative Learning of Anomalies with Privacy (CLAP) for Unsupervised Video Anomaly Detection: A New Baseline},
-  author={Al-lahham, Anas and Zaheer, Muhammad Zaigham and Tastan, Nurbek and Nandakumar, Karthik},
-  journal={arXiv preprint arXiv:2404.00847},
+  author={Al-Lahham, Anas and Zaheer, Muhammad Zaigham and Tastan, Nurbek and Nandakumar, Karthik},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={12416--12425},
   year={2024}
+}
 }</code></pre>
   </div>
 </section>
