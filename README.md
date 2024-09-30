@@ -81,7 +81,7 @@ Comparison of CLAP with other SOTA Unsupervised and Weakly Supervised methods
   pages={12416--12425},
   year={2024}
 }
-}</code></pre>
+</code></pre>
   </div>
 </section>
 
