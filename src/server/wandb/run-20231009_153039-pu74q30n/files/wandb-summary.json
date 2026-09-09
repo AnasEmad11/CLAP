@@ -1,1 +1,0 @@
-{"Train Loss": 0.1646435558795929, "_timestamp": 1696851239.3880358, "_runtime": 195.05567288398743, "_step": 1, "client status": {"before": {"test_AUC": 0.5666294410295648}, "after": {"test_AUC": 0.6301065608540312}}}

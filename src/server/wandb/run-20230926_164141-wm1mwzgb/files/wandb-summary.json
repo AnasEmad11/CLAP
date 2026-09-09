@@ -1,1 +1,0 @@
-{"client status": {"before": {"test_AUC": 0.7777485878188292}, "after": {"test_AUC": 0.7789425675464939}}, "_timestamp": 1695734476.0617793, "_runtime": 2375.0303962230682, "_step": 99, "AUC Before Max": 0.7777485878188292, "AUC After Max": 0, "AUC Before Average": 0.7777485878188292, "_wandb": {"runtime": 2373}}
